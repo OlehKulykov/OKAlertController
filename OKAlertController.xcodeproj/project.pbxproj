@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D0477681CD24C2B00B28467 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0477671CD24C2B00B28467 /* MyViewController.swift */; };
+		3D04779C1CD24CA700B28467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D0477971CD24CA700B28467 /* Assets.xcassets */; };
+		3D04779E1CD24CA700B28467 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D0477991CD24CA700B28467 /* LaunchScreen.storyboard */; };
+		3D04779F1CD24CA700B28467 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D04779A1CD24CA700B28467 /* Main.storyboard */; };
+		3D0477A01CD24CA700B28467 /* MyAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D04779B1CD24CA700B28467 /* MyAppDelegate.swift */; };
+		3D0477AF1CD24E3500B28467 /* MyFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0477AE1CD24E3500B28467 /* MyFont.swift */; };
+		3D0477B51CD24E7000B28467 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D0477B21CD24E6F00B28467 /* Lato-Bold.ttf */; };
+		3D0477B61CD24E7000B28467 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D0477B31CD24E7000B28467 /* Lato-Light.ttf */; };
+		3D0477B71CD24E7000B28467 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D0477B41CD24E7000B28467 /* Lato-Regular.ttf */; };
+		3D0477B91CD24FAF00B28467 /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0477B81CD24FAF00B28467 /* MyColors.swift */; };
+		3D4FBA8D1CD29AC200F105A3 /* OKAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FBA881CD29AC200F105A3 /* OKAlertController.swift */; };
+		3D4FBA8E1CD29AC200F105A3 /* OKAlertControllerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FBA891CD29AC200F105A3 /* OKAlertControllerElement.swift */; };
+		3D4FBA8F1CD29AC200F105A3 /* OKAlertControllerParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FBA8A1CD29AC200F105A3 /* OKAlertControllerParam.swift */; };
+		3D4FBA901CD29AC200F105A3 /* OKAlertControllerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FBA8B1CD29AC200F105A3 /* OKAlertControllerProxy.swift */; };
+		3D4FBA911CD29AC200F105A3 /* MyMinimalisticAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FBA8C1CD29AC200F105A3 /* MyMinimalisticAlertController.swift */; };
+		3DCB4EEE1CD1169900BF6F1D /* OKAlertControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EED1CD1169900BF6F1D /* OKAlertControllerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3DCB4EEA1CD1169900BF6F1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DCB4ECD1CD1169900BF6F1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DCB4ED41CD1169900BF6F1D;
+			remoteInfo = OKAlertController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D0477671CD24C2B00B28467 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		3D0477971CD24CA700B28467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D0477981CD24CA700B28467 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D0477991CD24CA700B28467 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D04779A1CD24CA700B28467 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3D04779B1CD24CA700B28467 /* MyAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAppDelegate.swift; sourceTree = "<group>"; };
+		3D0477AE1CD24E3500B28467 /* MyFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFont.swift; sourceTree = "<group>"; };
+		3D0477B21CD24E6F00B28467 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		3D0477B31CD24E7000B28467 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		3D0477B41CD24E7000B28467 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		3D0477B81CD24FAF00B28467 /* MyColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
+		3D4FBA881CD29AC200F105A3 /* OKAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKAlertController.swift; sourceTree = "<group>"; };
+		3D4FBA891CD29AC200F105A3 /* OKAlertControllerElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKAlertControllerElement.swift; sourceTree = "<group>"; };
+		3D4FBA8A1CD29AC200F105A3 /* OKAlertControllerParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKAlertControllerParam.swift; sourceTree = "<group>"; };
+		3D4FBA8B1CD29AC200F105A3 /* OKAlertControllerProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKAlertControllerProxy.swift; sourceTree = "<group>"; };
+		3D4FBA8C1CD29AC200F105A3 /* MyMinimalisticAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMinimalisticAlertController.swift; sourceTree = "<group>"; };
+		3DCB4ED51CD1169900BF6F1D /* OKAlertController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OKAlertController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DCB4EE91CD1169900BF6F1D /* OKAlertControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OKAlertControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DCB4EED1CD1169900BF6F1D /* OKAlertControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKAlertControllerTests.swift; sourceTree = "<group>"; };
+		3DCB4EEF1CD1169900BF6F1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DCB4ED21CD1169900BF6F1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCB4EE61CD1169900BF6F1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D04775C1CD24BC700B28467 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D4FBA871CD29AC200F105A3 /* OKAlertController */,
+				3D4FBA8C1CD29AC200F105A3 /* MyMinimalisticAlertController.swift */,
+				3D0477671CD24C2B00B28467 /* MyViewController.swift */,
+			);
+			name = Controller;
+			path = OKAlertController/Controller;
+			sourceTree = "<group>";
+		};
+		3D0477961CD24CA700B28467 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D04779B1CD24CA700B28467 /* MyAppDelegate.swift */,
+				3D04779A1CD24CA700B28467 /* Main.storyboard */,
+				3D0477991CD24CA700B28467 /* LaunchScreen.storyboard */,
+				3D0477971CD24CA700B28467 /* Assets.xcassets */,
+				3D0477B01CD24E6F00B28467 /* Fonts */,
+				3D0477981CD24CA700B28467 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = "OKAlertController/Supporting Files";
+			sourceTree = "<group>";
+		};
+		3D0477AC1CD24E3500B28467 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D0477AD1CD24E3500B28467 /* Misc */,
+			);
+			name = Model;
+			path = OKAlertController/Model;
+			sourceTree = "<group>";
+		};
+		3D0477AD1CD24E3500B28467 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				3D0477AE1CD24E3500B28467 /* MyFont.swift */,
+				3D0477B81CD24FAF00B28467 /* MyColors.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		3D0477B01CD24E6F00B28467 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3D0477B11CD24E6F00B28467 /* Lato */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3D0477B11CD24E6F00B28467 /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				3D0477B21CD24E6F00B28467 /* Lato-Bold.ttf */,
+				3D0477B31CD24E7000B28467 /* Lato-Light.ttf */,
+				3D0477B41CD24E7000B28467 /* Lato-Regular.ttf */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
+		3D4FBA871CD29AC200F105A3 /* OKAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				3D4FBA881CD29AC200F105A3 /* OKAlertController.swift */,
+				3D4FBA891CD29AC200F105A3 /* OKAlertControllerElement.swift */,
+				3D4FBA8A1CD29AC200F105A3 /* OKAlertControllerParam.swift */,
+				3D4FBA8B1CD29AC200F105A3 /* OKAlertControllerProxy.swift */,
+			);
+			path = OKAlertController;
+			sourceTree = "<group>";
+		};
+		3DCB4ECC1CD1169900BF6F1D = {
+			isa = PBXGroup;
+			children = (
+				3D04775C1CD24BC700B28467 /* Controller */,
+				3D0477AC1CD24E3500B28467 /* Model */,
+				3D0477961CD24CA700B28467 /* Supporting Files */,
+				3DCB4EEC1CD1169900BF6F1D /* OKAlertControllerTests */,
+				3DCB4ED61CD1169900BF6F1D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DCB4ED61CD1169900BF6F1D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB4ED51CD1169900BF6F1D /* OKAlertController.app */,
+				3DCB4EE91CD1169900BF6F1D /* OKAlertControllerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DCB4EEC1CD1169900BF6F1D /* OKAlertControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB4EED1CD1169900BF6F1D /* OKAlertControllerTests.swift */,
+				3DCB4EEF1CD1169900BF6F1D /* Info.plist */,
+			);
+			path = OKAlertControllerTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DCB4ED41CD1169900BF6F1D /* OKAlertController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DCB4EF21CD1169900BF6F1D /* Build configuration list for PBXNativeTarget "OKAlertController" */;
+			buildPhases = (
+				3DCB4ED11CD1169900BF6F1D /* Sources */,
+				3DCB4ED21CD1169900BF6F1D /* Frameworks */,
+				3DCB4ED31CD1169900BF6F1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OKAlertController;
+			productName = OKAlertController;
+			productReference = 3DCB4ED51CD1169900BF6F1D /* OKAlertController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3DCB4EE81CD1169900BF6F1D /* OKAlertControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DCB4EF51CD1169900BF6F1D /* Build configuration list for PBXNativeTarget "OKAlertControllerTests" */;
+			buildPhases = (
+				3DCB4EE51CD1169900BF6F1D /* Sources */,
+				3DCB4EE61CD1169900BF6F1D /* Frameworks */,
+				3DCB4EE71CD1169900BF6F1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DCB4EEB1CD1169900BF6F1D /* PBXTargetDependency */,
+			);
+			name = OKAlertControllerTests;
+			productName = OKAlertControllerTests;
+			productReference = 3DCB4EE91CD1169900BF6F1D /* OKAlertControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DCB4ECD1CD1169900BF6F1D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = olehkulykov;
+				TargetAttributes = {
+					3DCB4ED41CD1169900BF6F1D = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					3DCB4EE81CD1169900BF6F1D = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 3DCB4ED41CD1169900BF6F1D;
+					};
+				};
+			};
+			buildConfigurationList = 3DCB4ED01CD1169900BF6F1D /* Build configuration list for PBXProject "OKAlertController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3DCB4ECC1CD1169900BF6F1D;
+			productRefGroup = 3DCB4ED61CD1169900BF6F1D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DCB4ED41CD1169900BF6F1D /* OKAlertController */,
+				3DCB4EE81CD1169900BF6F1D /* OKAlertControllerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DCB4ED31CD1169900BF6F1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D0477B61CD24E7000B28467 /* Lato-Light.ttf in Resources */,
+				3D0477B71CD24E7000B28467 /* Lato-Regular.ttf in Resources */,
+				3D04779E1CD24CA700B28467 /* LaunchScreen.storyboard in Resources */,
+				3D04779C1CD24CA700B28467 /* Assets.xcassets in Resources */,
+				3D04779F1CD24CA700B28467 /* Main.storyboard in Resources */,
+				3D0477B51CD24E7000B28467 /* Lato-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCB4EE71CD1169900BF6F1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DCB4ED11CD1169900BF6F1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D4FBA8F1CD29AC200F105A3 /* OKAlertControllerParam.swift in Sources */,
+				3D0477A01CD24CA700B28467 /* MyAppDelegate.swift in Sources */,
+				3D4FBA8E1CD29AC200F105A3 /* OKAlertControllerElement.swift in Sources */,
+				3D0477AF1CD24E3500B28467 /* MyFont.swift in Sources */,
+				3D0477681CD24C2B00B28467 /* MyViewController.swift in Sources */,
+				3D4FBA8D1CD29AC200F105A3 /* OKAlertController.swift in Sources */,
+				3D4FBA911CD29AC200F105A3 /* MyMinimalisticAlertController.swift in Sources */,
+				3D0477B91CD24FAF00B28467 /* MyColors.swift in Sources */,
+				3D4FBA901CD29AC200F105A3 /* OKAlertControllerProxy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DCB4EE51CD1169900BF6F1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DCB4EEE1CD1169900BF6F1D /* OKAlertControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3DCB4EEB1CD1169900BF6F1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DCB4ED41CD1169900BF6F1D /* OKAlertController */;
+			targetProxy = 3DCB4EEA1CD1169900BF6F1D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3DCB4EF01CD1169900BF6F1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3DCB4EF11CD1169900BF6F1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3DCB4EF31CD1169900BF6F1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "OKAlertController/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = olehkulykov.OKAlertController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3DCB4EF41CD1169900BF6F1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "OKAlertController/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = olehkulykov.OKAlertController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3DCB4EF61CD1169900BF6F1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OKAlertControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = olehkulykov.OKAlertControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OKAlertController.app/OKAlertController";
+			};
+			name = Debug;
+		};
+		3DCB4EF71CD1169900BF6F1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OKAlertControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = olehkulykov.OKAlertControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OKAlertController.app/OKAlertController";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DCB4ED01CD1169900BF6F1D /* Build configuration list for PBXProject "OKAlertController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCB4EF01CD1169900BF6F1D /* Debug */,
+				3DCB4EF11CD1169900BF6F1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DCB4EF21CD1169900BF6F1D /* Build configuration list for PBXNativeTarget "OKAlertController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCB4EF31CD1169900BF6F1D /* Debug */,
+				3DCB4EF41CD1169900BF6F1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DCB4EF51CD1169900BF6F1D /* Build configuration list for PBXNativeTarget "OKAlertControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DCB4EF61CD1169900BF6F1D /* Debug */,
+				3DCB4EF71CD1169900BF6F1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DCB4ECD1CD1169900BF6F1D /* Project object */;
+}

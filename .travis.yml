@@ -1,0 +1,21 @@
+language: objective-c
+osx_image: xcode7.3
+xcode_sdk: iphonesimulator9.3
+
+install:
+- gem install xcpretty --no-rdoc --no-ri --no-document
+- gem install jazzy --no-rdoc --no-ri --no-document
+
+script:
+- xcrun swift -version
+- open -b com.apple.iphonesimulator
+#- set -o pipefail && xcodebuild test -project Example/OKAlertController.xcodeproj -scheme OKAlertController -destination 'platform=iOS Simulator,name=iPhone 4s,OS=8.4' | xcpretty -c
+#- set -o pipefail && xcodebuild test -project Example/OKAlertController.xcodeproj -scheme OKAlertController -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' | xcpretty -c
+#- set -o pipefail && xcodebuild test -project Example/OKAlertController.xcodeproj -scheme OKAlertController -destination 'platform=iOS Simulator,name=iPhone 6 Plus,OS=9.3' | xcpretty -c
+- ./generate_docs.sh
+
+env:
+  global:
+  - secure: agVdxi8mi1+iF64k+tuaz9vt51VUnn962hRM6UTHV3G35d8QjM6HPks/FQckyxIuOtnnkIBUI6J5RxHgyng1kqIUbmcP2xk7griRg8gtNc9q1sJrQMoQF90I9/bbYHoOUrN/7HtJVqvjAmDV4mHCz7si5l757PzCamD7fFr+fHE3D14WrUHYSgZwekd5JD5jhNoLu1WM91lTdk42hJX79FhRvL0/ZT+cpD+tbvbcU3xWepdjy0QteWDwRNaD8N6q7qM2SwolEWBxYQ3LbXQaV4i5IsPriy8ZdiKwYcCq9nptjbpEtfTvKifzbsrFFyvD9tA+oHWRzrOFchPkeqmAt0xFpgTLeGtYmMiADmz6P5IqSg+ZkWpqp/Uhg5fiYd5ZPN0Ts/usLMHyoCJJ9nX8LxXapZmHSARtLXl0V3MLIr3jh6UOUmKe4P698Np8aorXbNkj9OGb8FbSU+dAVlFJ4Ox/FmPNOVM909A5gnAMZY0zTToObVjBqyO/66n8p2Wc6GEtpSBuiWhqfmpYqvfrokFQWvt53yjWZh3nRDyETDyC1jq8vUgfs+QITizVtPcYat+PaNcnb51ASDIs7RPJnvgBCpObEooQc+5iazAZX5sLP3fXdrzKBIMndN7prwP9oqgx0inTXDPR/sPV3t8qAxGO3YGgswdwGuF82I0eals=
+  - secure: KlxpipZWblbo75c8Urfo8YWheh7AfppxqPp3gPdkkDw8uWFP1bOt+FUs2oacixYOyJGBYcSVBSi3h/l+8E3onMCp5TO3lFWJNHbJnzxg+nsTlRYsfendwWFcqnukTIsgVZe2ZlYXr2Nb/J3+IzO6iZTfSJuFb6ahOzmmUtfZmtZM5XCei80IgTqsgUl8BmbRV3A1TEz9ChicHbCcJya0VgnSd/cxdgbkEh0HrHnsQNMsBywg0FcnOiUS3rY0gDRsTo/s/01QIqHNQsVjQAG5GPAONRoB2KySPgfpy12a6DcnA+tXaAsnfdlieafuEeqsMIzOdNe8BuoSqU8OfmMKRW5Afo/nL2ianf4PY6g1oVsS72PNMJtuTAQ33LwLjFLuR8yLn+p1A1CCJFAX+YT0Q8nlj2gCIkNTNkBVCYKQBxxKM/w9IYpxxflVmuEsYsPJKbBY3awkS2DiDznSoyaihSiYKyNHYuoqMSzSp/d0DJZ/4xSQ7orJOcaMkvbIdQ5HlhPTTT1+zX7Tq4iwZgBZMWzNYKna0P8RJWgaakSCgNafM3BRFcOrSS3lUD9aFBh+cPD0V+R2MdjjOBwlcVwsZIEm5NCn7T3cytnfd4YztwKsUb8Nhtuf40aAz020xxUFeyxSLSvAs6iDll9KJumxKNpa5nwPLcPuW8sz73k7uQM=
+  - secure: W6ZFh/OySagKHXxs87pdu5uSu0s20MRa/gVWBJ9Veh54SODu2PvRenaklO5jWy/7GA93wiGnWKDUkauZcZbVNy74CJMXECoaAz9VPY0kWooXONGXbJeRtBxEX6vhKtWQbSJGR+Y9G3B/Yv23EkvMzXBc1Ze4PH7XZkD1LN1xdGmdU5qHrmTnvcMSrMxp5aAOU5Iaa3jQI4K8jv5qrgBuBbTM/woeacwXkt6JdeP/TAhQa5gpaZoI0diDlLWNeqt3NwkgJ12St1If6A0Kjvf4fg2/JWXgDUcucN8xymiKqFhd4CcRsecnBrw6i1CpXAQgfjC80Z1PoFHIGXNo6zOOxTncNuyY/UmxhQfoPEbl6bWEcsWrEDBL/H9iCqIVXhIED/Q+UdNG5ve4chFBhUZNlgdRN1mqWynDp7ajfTi3uYx8AZzjNNK3K+3AyRMHAE16N79mwWiQGcAv8X4TsIpmQTu4SYJOEKKR2EHquhiWgQY5G+TKwahQo3zRXqO8LzROVcY21MRGIsMiQDmt0ijFIMHIi/ZtuqxkOTCBgFA7v+FCJsIUZIYcFnQRdtVtEmSGkNWnu5Q9f51n27Ki6B3W0RxAmMytpHCNBYaS2Qr8SjgqpIReY+1OJLaETnyKusSBoeJu5e4bU2nINm2y9ygQc120f3UWEK5ERjE2dsb/zF8=
