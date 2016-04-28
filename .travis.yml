@@ -8,8 +8,8 @@ install:
 script:
 - xcrun swift -version
 - open -b com.apple.iphonesimulator
-- set -o pipefail && xcodebuild test -project Example/OKAlertController.xcodeproj -scheme OKAlertController -destination 'platform=iOS Simulator,name=iPhone 4s,OS=8.4' | xcpretty -c
-- set -o pipefail && xcodebuild test -project Example/OKAlertController.xcodeproj -scheme OKAlertController -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' | xcpretty -c
+#- set -o pipefail && xcodebuild test -project Example/OKAlertController.xcodeproj -scheme OKAlertController -destination 'platform=iOS Simulator,name=iPhone 4s,OS=8.4' | xcpretty -c
+#- set -o pipefail && xcodebuild test -project Example/OKAlertController.xcodeproj -scheme OKAlertController -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.0' | xcpretty -c
 #- set -o pipefail && xcodebuild test -project Example/OKAlertController.xcodeproj -scheme OKAlertController -destination 'platform=iOS Simulator,name=iPhone 6 Plus,OS=9.3' | xcpretty -c
 - ./generate_docs.sh
 
