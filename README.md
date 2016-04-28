@@ -3,8 +3,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/OKAlertController.svg?style=flat)](http://cocoapods.org/pods/OKAlertController)
 [![Version](https://img.shields.io/cocoapods/v/OKAlertController.svg?style=flat)](http://cocoapods.org/pods/OKAlertController)
 [![License](https://img.shields.io/cocoapods/l/OKAlertController.svg?style=flat)](http://cocoapods.org/pods/OKAlertController)
-[![CI Status](http://img.shields.io/travis/OlehKulykov/OKAlertController.svg?style=flat)](https://travis-ci.org/OlehKulykov/OKAlertCont
-roller)
+[![CI Status](http://img.shields.io/travis/OlehKulykov/OKAlertController.svg?style=flat)](https://travis-ci.org/OlehKulykov/OKAlertController)
 
 
 ### Usage
