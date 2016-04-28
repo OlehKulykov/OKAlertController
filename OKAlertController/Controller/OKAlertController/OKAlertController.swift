@@ -24,8 +24,11 @@
 import UIKit
 
 
+// Public controller interface.
+
+
 /**
-Wraps and manages standart UIAlertController look.
+Wraps and manages standart `UIAlertController` look.
 First ctreate controller, fill with actions and only than make customiztion before show.
 It's recommended to create extension for you application, override show function and
 before show make you application specific customization.
@@ -43,6 +46,7 @@ public class OKAlertController {
 	/**
 	Get/set alert title text color. 
 	The default value is nil - standart title text color.
+	Provide nil to remove/ignore title text color modification and use standart.
 	*/
 	public var titleColor: UIColor? {
 		get {
@@ -53,6 +57,12 @@ public class OKAlertController {
 		}
 	}
 
+
+	/**
+	Get/set alert title font.
+	The default value is nil - standart title font.
+	Provide nil to remove/ignore title font modification and use standart.
+	*/
 	public var titleFont: UIFont? {
 		get {
 			return proxy[.Title, .Font]?.getValue()
@@ -202,6 +212,15 @@ public class OKAlertController {
 
 	/**
 	Initialize controller with style and optional title and message.
+	
+	- Parameters:
+		- title: Title of the alert controller.
+	
+		- message: Descriptive text that provides more details about the reason for the alert.
+	
+		- preferredStyle: The style of the alert controller. Default value is `.Alert`. For more information look at `UIAlertControllerStyle`.
+	
+	- Returns: Initialized alert controller.
 	*/
 	public init(title: String?, message: String?, preferredStyle: UIAlertControllerStyle = .Alert) {
 		let titleElement = proxy.updateTypeValue(.Title, paramType: .Text, value: title)
