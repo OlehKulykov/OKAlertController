@@ -5,7 +5,7 @@ echo -e "Executing docs"
 if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
     echo -e "Generating Jazzy output \n"
     
-    jazzy --clean --author "Oleh Kulykov" --author_url http://www.resident.name --github_url https://github.com/OlehKulykov/OKAlertController --xcodebuild-arguments "-scheme,OKAlertController" --module OKAlertController --root-url http://olehkulykov.github.io/OKAlertController --theme apple --swift-version 2.2 --min-acl private --readme README.md
+    jazzy --clean --author "Oleh Kulykov" --author_url http://www.resident.name --github_url https://github.com/OlehKulykov/OKAlertController --xcodebuild-arguments "-scheme,OKAlertController" --module OKAlertController --root-url http://olehkulykov.github.io/OKAlertController --theme apple --swift-version 2.2 --min-acl public --readme README.md
 
     pushd docs
 
