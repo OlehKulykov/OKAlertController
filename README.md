@@ -76,10 +76,11 @@ alert.showMinimalistic()
 ## Installation
 
 - OKAlertController is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
-- 
+
 ```ruby
 pod "OKAlertController"
 ```
+
 - Manual copy contents of the directory ```OKAlertController/Controller/OKAlertController/``` to your project and use.
 
 
