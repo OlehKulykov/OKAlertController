@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name             = "OKAlertController"
-  s.version          = "1.0.1"
+  s.version          = "1.0.2"
   s.summary          = "Customisable UIAlertController controller"
   s.description      = <<-DESC
 Customisable UIAlertController controller.
                          DESC
 
   s.homepage         = "https://github.com/OlehKulykov/OKAlertController"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.screenshots     = "https://github.com/OlehKulykov/OKAlertController/raw/master/Resources/ScreenShot1.png"
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { "OlehKulykov" => "info@resident.name" }
   s.source           = { :git => "https://github.com/OlehKulykov/OKAlertController.git", :tag => s.version.to_s }

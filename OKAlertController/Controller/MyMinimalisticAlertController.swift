@@ -39,6 +39,9 @@ extension OKAlertController {
 			return
 		}
 
+		self.shadowColor = UIColor(white: 1, alpha: 0.79)
+		self.backgroundColor = UIColor.whiteColor()
+
 		self.titleFont = MyFont.LatoBold.fontWithSize(18)
 		self.titleColor = MyColors.AlertTextColor
 
@@ -56,9 +59,6 @@ extension OKAlertController {
 
 		self.allDefaultActionsColor = MyColors.AlertNormalButtonTextColor
 		self.allDefaultActionsFont = MyFont.LatoRegular.fontWithSize(18)
-
-		self.shadowColor = UIColor(white: 1, alpha: 0.79)
-		self.backgroundColor = UIColor.whiteColor()
 
 		show(fromController: rootController, animated: true)
 	}

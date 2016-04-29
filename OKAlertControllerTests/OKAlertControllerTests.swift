@@ -123,27 +123,6 @@ class OKAlertControllerTests: XCTestCase {
 		XCTAssertNotNil(alert.shadowColor, "Can't store 'shadowColor' value.")
 		XCTAssert(alert.shadowColor! == testColor, "Broken 'shadowColor' value.")
 
-//
-//		alert.titleFont = UIFont(name: "Lato-Bold", size: 18)
-//		alert.titleColor = UIColor(hexString: "#4A4D55")
-//
-//		alert.messageFont = UIFont(name: "Lato-Light", size: 14.5)
-//		alert.messageColor = UIColor(hexString: "#4A4D55")
-//
-//		alert.borderWidth = 0.5
-//		alert.borderColor = UIColor(hexString: "#979797")
-//
-//		alert.allCancelActionsColor = UIColor(hexString: "#D3D3D3")
-//		alert.allCancelActionsFont = UIFont(name: "Lato-Bold", size: 18)
-//
-//		alert.allDestructiveActionsColor = UIColor(hexString: "#D3D3D3")
-//		alert.allDestructiveActionsFont = UIFont(name: "Lato-Regular", size: 18)
-//
-//		alert.allDefaultActionsColor = UIColor(hexString: "#6D9EE1") 
-//		alert.allDefaultActionsFont = UIFont(name: "Lato-Regular", size: 18)
-//
-//		alert.shadowColor = UIColor(white: 1, alpha: 0.79)
-//		alert.backgroundColor = UIColor.whiteColor()
 	}
 
 }
