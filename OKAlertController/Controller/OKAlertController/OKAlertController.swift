@@ -35,7 +35,7 @@ before show make you application specific customization.
 
 - Note: All variables have default value as `nil`, which means this parameter will not be applied/changed.
 
-- Example:
+Example:
 
 ```swift
 	// Create alert.
