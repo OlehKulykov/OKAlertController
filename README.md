@@ -10,9 +10,11 @@ Customizable UIAlertController controller. No custom UI - just use standart impl
 
 ![Alt text](Resources/ScreenShot1.png)
 
+
 ## Usage
 
 ### Create, customize and show/present
+
 ```swift
 // Create alert controller as usual
 let alert = OKAlertController(title: "Some title", message: "Some message")
@@ -35,6 +37,7 @@ alert.show(fromController: self, animated: true)
 **It's recommended to create extension or subsclass of the alert controller, once setup style to conform the design and reuse in any part of your project.**
 
 See below example:
+
 ```swift
 extension OKAlertController {
   // For instance your style called "Minimalistic", just create function to show this style of alert
@@ -65,8 +68,10 @@ alert.showMinimalistic()
 
 
 ## Requirements
+
 - Minimum iOS: 8.0
 - Works for both iPhone and iPad
+
 
 ## Installation
 
@@ -75,6 +80,7 @@ alert.showMinimalistic()
 pod "OKAlertController"
 ```
 - Manual copy contents of the directory ```OKAlertController/Controller/OKAlertController/``` to your project and use.
+
 
 ## License
 
