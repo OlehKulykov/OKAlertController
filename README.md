@@ -6,6 +6,7 @@
 [![CI Status](http://img.shields.io/travis/OlehKulykov/OKAlertController.svg?style=flat)](https://travis-ci.org/OlehKulykov/OKAlertController)
 [![OnlineDocumentation Status](https://img.shields.io/badge/online%20documentation-generated-brightgreen.svg)](http://olehkulykov.github.io/OKAlertController)
 
+![Alt text](Resources/ScreenShot1.png)
 
 ### Usage
 
