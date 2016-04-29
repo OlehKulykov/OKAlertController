@@ -32,7 +32,7 @@ alert.titleColor = ... /// <- Title text color
 alert.show(fromController: self, animated: true)
 ```
 
-**It's recommended to create extension of the alert controller, once setup style to conform the design and reuse in any part of your project.**
+**It's recommended to create extension or subsclass of the alert controller, once setup style to conform the design and reuse in any part of your project.**
 
 See below example:
 ```swift
