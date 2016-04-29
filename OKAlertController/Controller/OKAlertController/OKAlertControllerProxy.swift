@@ -125,11 +125,11 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	var elements: [Element] = []
 
 	subscript(type: ElementType) -> Element? {
-		return elements.filter({ $0.type == type }).first
+		return elements.findFirst({ $0.type == type })
 	}
 
 	subscript(elemType: ElementType, paramType: ParamType) -> Param? {
-		guard let element = elements.filter({ $0.type == elemType}).first else {
+		guard let element = elements.findFirst({ $0.type == elemType}) else {
 			return nil
 		}
 		return element[paramType]

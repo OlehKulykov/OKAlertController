@@ -35,7 +35,32 @@ internal enum OKAlertControllerElementType: Int {
 	case Border
 }
 
+extension SequenceType {
+	@warn_unused_result
+	public func findFirst(@noescape includeElement: (Self.Generator.Element) -> Bool) -> Self.Generator.Element? {
+		for element in self {
+			if includeElement(element) {
+				return element
+			}
+		}
+		return nil
+	}
+}
+/*
+extension Array {
 
+	// Returns the first element satisfying the predicate, or `nil`
+	// if there is no matching element.
+	func findFirstMatching<L : BooleanType>(predicate: T -> L) -> T? {
+		for item in self {
+			if predicate(item) {
+				return item // found
+			}
+		}
+		return nil // not found
+	}
+}
+*/
 internal class OKAlertControllerElement {
 
 	typealias ElementType = OKAlertControllerElementType
@@ -51,21 +76,20 @@ internal class OKAlertControllerElement {
 	}
 
 	func checkLabel(label: UILabel) -> Bool {
-		guard let text = label.text else {
-			return false
-		}
-		let dstText: String = self[.Text]?.getValue() ?? ""
-		if label.tag == tag || text == key || text == dstText {
-			label.tag = tag
-			label.attributedText = attributedString // assigning a new a value updates the values in the font, textColor
-			return true
+		if let text = label.text {
+			let dstText: String = self[.Text]?.getValue() ?? ""
+			if label.tag == tag || text == key || text == dstText {
+				label.tag = tag
+				label.attributedText = attributedString // assigning a new a value updates the values in the font, textColor
+				return true
+			}
 		}
 		return false
 	}
 
-	var attributedString: NSMutableAttributedString {
+	var attributedString: NSAttributedString {
 		var text: String?
-		var attributes = [String : AnyObject]()
+		var attributes = [String : AnyObject](minimumCapacity: 2)
 		for param in params {
 			switch param.type {
 			case .Text:
@@ -82,11 +106,11 @@ internal class OKAlertControllerElement {
 				continue
 			}
 		}
-		return NSMutableAttributedString(string: text ?? "", attributes: attributes)
+		return NSAttributedString(string: text ?? "", attributes: attributes)
 	}
 
 	subscript(type: ParamType) -> Param? {
-		return params.filter({ $0.type == type }).first
+		return params.findFirst({ $0.type == type })
 	}
 
 	init(type: ElementType, tag: Int) {
