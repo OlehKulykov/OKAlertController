@@ -37,14 +37,7 @@ internal enum OKAlertControllerElementType: Int {
 
 extension SequenceType {
 	@warn_unused_result
-	/**
-	Locates first element that conforms `condition` handler.
-	
-	- Parameter condition: Check element `condition` clock.
-	
-	- Returns: First element that passed `condition` clock or nil.
-	*/
-	public func findFirst(@noescape condition: (Self.Generator.Element) -> Bool) -> Self.Generator.Element? {
+	internal func findFirst(@noescape condition: (Self.Generator.Element) -> Bool) -> Self.Generator.Element? {
 		for element in self {
 			if condition(element) {
 				return element
