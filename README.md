@@ -20,7 +20,7 @@ Customizable UIAlertController controller. No custom UI - just use standart impl
 let alert = OKAlertController(title: "Some title", message: "Some message")
 
 // Fill with reqired actions
-alert.addAction("Do you want to to?", style: .Default) { _ in
+alert.addAction("Some option", style: .Default) { _ in
   // Process action
 }
 
