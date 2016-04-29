@@ -6,7 +6,8 @@
 
 # OKAlertController
 
-Customizable UIAlertController controller. No custom UI - just use standart implementation and update it's UI.
+Customizable UIAlertController controller.
+No custom UI or behavior - used standart UIAlertController with updated UI.
 
 ![Alt text](Resources/ScreenShot1.png)
 
