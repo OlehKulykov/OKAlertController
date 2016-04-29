@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0154031CD33F0D00CAE8C1 /* OKFontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0154021CD33F0D00CAE8C1 /* OKFontTests.swift */; };
+		3D0154051CD33F6100CAE8C1 /* XCTestCase+IteratetEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0154041CD33F6100CAE8C1 /* XCTestCase+IteratetEnum.swift */; };
 		3D0477681CD24C2B00B28467 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0477671CD24C2B00B28467 /* MyViewController.swift */; };
 		3D04779C1CD24CA700B28467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D0477971CD24CA700B28467 /* Assets.xcassets */; };
 		3D04779E1CD24CA700B28467 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D0477991CD24CA700B28467 /* LaunchScreen.storyboard */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D0154021CD33F0D00CAE8C1 /* OKFontTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKFontTests.swift; sourceTree = "<group>"; };
+		3D0154041CD33F6100CAE8C1 /* XCTestCase+IteratetEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+IteratetEnum.swift"; sourceTree = "<group>"; };
 		3D0477671CD24C2B00B28467 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		3D0477971CD24CA700B28467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D0477981CD24CA700B28467 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -171,8 +175,10 @@
 		3DCB4EEC1CD1169900BF6F1D /* OKAlertControllerTests */ = {
 			isa = PBXGroup;
 			children = (
+				3D0154021CD33F0D00CAE8C1 /* OKFontTests.swift */,
 				3DCB4EED1CD1169900BF6F1D /* OKAlertControllerTests.swift */,
 				3DCB4EEF1CD1169900BF6F1D /* Info.plist */,
+				3D0154041CD33F6100CAE8C1 /* XCTestCase+IteratetEnum.swift */,
 			);
 			path = OKAlertControllerTests;
 			sourceTree = "<group>";
@@ -297,6 +303,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D0154051CD33F6100CAE8C1 /* XCTestCase+IteratetEnum.swift in Sources */,
+				3D0154031CD33F0D00CAE8C1 /* OKFontTests.swift in Sources */,
 				3DCB4EEE1CD1169900BF6F1D /* OKAlertControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

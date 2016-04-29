@@ -21,51 +21,21 @@
 */
 
 
-import UIKit
+import XCTest
+@testable import OKAlertController
+
+class OKFontTests: XCTestCase {
 
 
-class MyViewController: UIViewController {
-
-	let alertTitle = "Lorem ipsum dolor sit amet"
-	let alertMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-	@IBAction func show() {
-
-		let alert = OKAlertController(title: alertTitle, message: alertMessage)
-
-		alert.addAction("Ut enim ad minim veniam", style: .Default) { _ in
-
+    func testAllFontsAvailable() {
+		func testAllFonts() {
+			for fontKey in iterateEnum(MyFont).generate() {
+				for fontSize in 5...55 {
+					// Should be initialized without any errors and optionals.
+					let _ = fontKey.fontWithSize(CGFloat(fontSize))
+				}
+			}
 		}
-
-		alert.addAction("Duis aute irure dolor", style: .Default) { _ in
-
-		}
-
-		alert.addAction("Cancel", style: .Cancel) { _ in
-
-		}
-		alert.addAction("Destructive", style: .Destructive, handler: nil)
-
-		alert.showMinimalistic()
-
-		alert.show(fromController: self, animated: true)
-
-		//alert.showOriginal()
-
-//		alert.show(fromController: self, animated: true)
-	}
-
-	override func viewDidLoad() {
-		self.view.backgroundColor = UIColor.lightGrayColor()
-		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
-	}
-
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-
+    }
 
 }
-

@@ -32,12 +32,41 @@ Wraps and manages standart `UIAlertController` look.
 First ctreate controller, fill with actions and only than make customiztion before show.
 It's recommended to create extension for you application, override show function and
 before show make you application specific customization.
+
+- Note: All variables have default value as `nil`, which means this parameter will not be applied/changed.
+
+- Example:
+
+```swift
+	// Create alert.
+	let alert = OKAlertController(title: "Some title", message: "Alert message")
+
+	// Add actions
+	alert.addAction("Ut enim ad minim veniam", style: .Default) { _ in
+
+	}
+
+	alert.addAction("Cancel", style: .Cancel) { _ in
+
+	}
+
+	//TODO: setup controller with custom colors, fonts, etc.
+	alert.shadowColor = UIColor(white: 1, alpha: 0.79)
+	alert.backgroundColor = UIColor.whiteColor()
+
+	// Finaly show controller
+	alert.show(fromController: self, animated: true)
+```
 */
 public class OKAlertController {
 
+	/// Actual `UIAlertController` for setup and show.
 	private var alert: UIAlertController!
+
+	/// Main setup logic.
 	private var proxy = OKAlertControllerProxy()
 
+	/// Change back original alert parameters.
 	private func proxyToAlert() {
 		alert.modalPresentationStyle = proxy.modalPresentationStyle
 		alert.transitioningDelegate = proxy.delegate
@@ -45,8 +74,8 @@ public class OKAlertController {
 
 	/**
 	Get/set alert title text color. 
-	The default value is nil - standart title text color.
-	Provide nil to remove/ignore title text color modification and use standart.
+	The default value is `nil` - standart title text color.
+	Provide `nil` to remove/ignore title text color modification and use standart.
 	*/
 	public var titleColor: UIColor? {
 		get {
@@ -60,8 +89,8 @@ public class OKAlertController {
 
 	/**
 	Get/set alert title font.
-	The default value is nil - standart title font.
-	Provide nil to remove/ignore title font modification and use standart.
+	The default value is `nil` - standart title font.
+	Provide `nil` to remove/ignore title font modification and use standart.
 	*/
 	public var titleFont: UIFont? {
 		get {
@@ -72,6 +101,12 @@ public class OKAlertController {
 		}
 	}
 
+
+	/**
+	Get/set alert message text color.
+	The default value is `nil` - standart message text color.
+	Provide `nil` to remove/ignore message text color modification and use standart.
+	*/
 	public var messageColor: UIColor? {
 		get {
 			return proxy[.Message, .Color]?.getValue()
@@ -81,6 +116,12 @@ public class OKAlertController {
 		}
 	}
 
+
+	/**
+	Get/set alert message font.
+	The default value is `nil` - standart message font.
+	Provide `nil` to remove/ignore message font modification and use standart.
+	*/
 	public var messageFont: UIFont? {
 		get {
 			return proxy[.Message, .Font]?.getValue()
@@ -90,6 +131,12 @@ public class OKAlertController {
 		}
 	}
 
+
+	/**
+	Get/set alert background window color.
+	The default value is `nil` - standart background window color.
+	Provide `nil` to remove/ignore background window color modification and use standart.
+	*/
 	public var backgroundColor: UIColor? {
 		get {
 			return proxy[.Background, .Color]?.getValue()
@@ -99,6 +146,12 @@ public class OKAlertController {
 		}
 	}
 
+
+	/**
+	Get/set alert default actions text font.
+	The default value is `nil` - standart default actions text font.
+	Provide `nil` to remove/ignore default actions text font modification and use standart.
+	*/
 	public var allDefaultActionsFont: UIFont? {
 		get {
 			return proxy[.AllDefaultActions, .Font]?.getValue()
@@ -108,6 +161,12 @@ public class OKAlertController {
 		}
 	}
 
+
+	/**
+	Get/set alert default actions text color.
+	The default value is `nil` - standart default actions text color.
+	Provide `nil` to remove/ignore default actions text color modification and use standart.
+	*/
 	public var allDefaultActionsColor: UIColor? {
 		get {
 			return proxy[.AllDefaultActions, .Color]?.getValue()
@@ -117,6 +176,12 @@ public class OKAlertController {
 		}
 	}
 
+
+	/**
+	Get/set alert cancel actions text font.
+	The default value is `nil` - standart cancel actions text font.
+	Provide `nil` to remove/ignore cancel actions text font modification and use standart.
+	*/
 	public var allCancelActionsFont: UIFont? {
 		get {
 			return proxy[.AllCancelActions, .Font]?.getValue()
@@ -126,6 +191,12 @@ public class OKAlertController {
 		}
 	}
 
+
+	/**
+	Get/set alert cancel actions text color.
+	The default value is `nil` - standart cancel actions text color.
+	Provide `nil` to remove/ignore cancel actions color color modification and use standart.
+	*/
 	public var allCancelActionsColor: UIColor? {
 		get {
 			return proxy[.AllCancelActions, .Color]?.getValue()
@@ -135,6 +206,12 @@ public class OKAlertController {
 		}
 	}
 
+
+	/**
+	Get/set alert destructive actions text font.
+	The default value is `nil` - standart destructive actions text font.
+	Provide `nil` to remove/ignore destructive actions text font modification and use standart.
+	*/
 	public var allDestructiveActionsFont: UIFont? {
 		get {
 			return proxy[.AllDestructiveActions, .Font]?.getValue()
@@ -144,6 +221,12 @@ public class OKAlertController {
 		}
 	}
 
+
+	/**
+	Get/set alert destructive actions text color.
+	The default value is `nil` - standart destructive actions text color.
+	Provide `nil` to remove/ignore destructive actions text color modification and use standart.
+	*/
 	public var allDestructiveActionsColor: UIColor? {
 		get {
 			return proxy[.AllDestructiveActions, .Color]?.getValue()
@@ -153,6 +236,12 @@ public class OKAlertController {
 		}
 	}
 
+
+	/**
+	Get/set alert shadow color.
+	The default value is `nil` - standart shadow color.
+	Provide `nil` to remove/ignore destructive shadow color modification and use standart.
+	*/
 	public var shadowColor: UIColor? {
 		get {
 			return proxy[.Shadow, .Color]?.getValue()
@@ -162,6 +251,12 @@ public class OKAlertController {
 		}
 	}
 
+
+	/**
+	Get/set alert window border color.
+	The default value is `nil` - standart window border color.
+	Provide `nil` to remove/ignore destructive window border color modification and use standart.
+	*/
 	public var borderColor: UIColor? {
 		get {
 			return proxy[.Border, .Color]?.getValue()
@@ -171,7 +266,12 @@ public class OKAlertController {
 		}
 	}
 
-	public var borderWidth: CGFloat? {
+
+	/**
+	Get/set alert window border line width.
+	The default and minimum value is 0.
+	*/
+	public var borderWidth: CGFloat {
 		get {
 			if let number: NSNumber = proxy[.Border, .Width]?.getValue() {
 				return CGFloat(number.floatValue)
@@ -179,10 +279,22 @@ public class OKAlertController {
 			return 0
 		}
 		set {
-			proxy.updateTypeValue(.Border, paramType: .Width, value: newValue != nil ? NSNumber(float: Float(newValue!)) : nil)
+			let newWidth = max(0, newValue)
+			proxy.updateTypeValue(.Border, paramType: .Width, value: NSNumber(float: Float(newWidth)))
 		}
 	}
 
+
+	/**
+	Show/present alert controller.
+
+	- Warning: Before calling this function need to set all required parameters, e.g. setup controller.
+
+	- Parameters:
+		- fromController: Presenter view controller for the alert.
+
+		- animated: Animating flag for presenting.
+	*/
 	public func show(fromController from: UIViewController, animated: Bool) {
 		proxy.delegate = alert.transitioningDelegate
 		proxy.modalPresentationStyle = alert.modalPresentationStyle
@@ -193,6 +305,17 @@ public class OKAlertController {
 		}
 	}
 
+
+	/**
+	Add alert action.
+	
+	- Parameters:
+		- title: The title string of the action.
+	
+		- style: Action style. Look at `UIAlertActionStyle`.
+	
+		- handler: Handler to insform outside logic that the action was trigered.
+	*/
 	public func addAction(title: String?, style: UIAlertActionStyle, handler: ((UIAlertAction) -> Void)?) {
 		let type: OKAlertControllerProxy.ElementType
 		switch style {

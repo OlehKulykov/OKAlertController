@@ -27,17 +27,104 @@ import XCTest
 
 
 class OKAlertControllerTests: XCTestCase {
-    
 
-    func testAccessors() {
+	let testFont = MyFont.LatoBold.fontWithSize(18)
+	let testColor = UIColor.whiteColor()
+
+	func testRegularAccessors() {
+		let alert = OKAlertController(title: "title", message: "message")
+		alert.addAction("Ut enim ad minim veniam", style: .Default, handler: nil)
+		alert.addAction("Duis aute irure dolor", style: .Default, handler: nil)
+		alert.addAction("Cancel", style: .Cancel, handler: nil)
+
+		XCTAssertTrue(Int(alert.borderWidth) == 0, "Broken 'borderWidth' default value.")
+		alert.borderWidth = 3
+		XCTAssertTrue(Int(alert.borderWidth) == 3, "Broken 'borderWidth' value.")
+
+		alert.borderWidth = -3
+		XCTAssertFalse(Int(alert.borderWidth) == -3, "'borderWidth' can't be negative, get default value.")
+		XCTAssertTrue(Int(alert.borderWidth) == 0, "'borderWidth' can't be negative, get default value.")
+	}
+
+	func testFontAccessors() {
+		let alert = OKAlertController(title: "title", message: "message")
+		alert.addAction("Ut enim ad minim veniam", style: .Default, handler: nil)
+		alert.addAction("Duis aute irure dolor", style: .Default, handler: nil)
+		alert.addAction("Cancel", style: .Cancel, handler: nil)
+
+		XCTAssertNil(alert.titleFont, "Broken 'titleFont' default value.")
+		alert.titleFont = testFont
+		XCTAssertNotNil(alert.titleFont, "Can't store 'titleFont' value.")
+		XCTAssert(alert.titleFont! == testFont, "Broken 'titleFont' value.")
+
+		XCTAssertNil(alert.messageFont, "Broken 'messageFont' default value.")
+		alert.messageFont = testFont
+		XCTAssertNotNil(alert.messageFont, "Can't store 'messageFont' value.")
+		XCTAssert(alert.messageFont! == testFont, "Broken 'messageFont' value.")
+
+		XCTAssertNil(alert.allCancelActionsFont, "Broken 'allCancelActionsFont' default value.")
+		alert.allCancelActionsFont = testFont
+		XCTAssertNotNil(alert.allCancelActionsFont, "Can't store 'allCancelActionsFont' value.")
+		XCTAssert(alert.allCancelActionsFont! == testFont, "Broken 'allCancelActionsFont' value.")
+
+		XCTAssertNil(alert.allDestructiveActionsFont, "Broken 'allDestructiveActionsFont' default value.")
+		alert.allDestructiveActionsFont = testFont
+		XCTAssertNotNil(alert.allDestructiveActionsFont, "Can't store 'allDestructiveActionsFont' value.")
+		XCTAssert(alert.allDestructiveActionsFont! == testFont, "Broken 'allDestructiveActionsFont' value.")
+
+		XCTAssertNil(alert.allDefaultActionsFont, "Broken 'allDefaultActionsFont' default value.")
+		alert.allDefaultActionsFont = testFont
+		XCTAssertNotNil(alert.allDefaultActionsFont, "Can't store 'allDefaultActionsFont' value.")
+		XCTAssert(alert.allDefaultActionsFont! == testFont, "Broken 'allDefaultActionsFont' value.")
+	}
+
+	func testColorAccessors() {
 		let alert = OKAlertController(title: "title", message: "message")
 		alert.addAction("Ut enim ad minim veniam", style: .Default, handler: nil)
 		alert.addAction("Duis aute irure dolor", style: .Default, handler: nil)
 		alert.addAction("Cancel", style: .Cancel, handler: nil)
 		alert.addAction("Destructive", style: .Destructive, handler: nil)
 
-		alert.backgroundColor = UIColor.whiteColor()
-		XCTAssert(alert.backgroundColor! == UIColor.whiteColor())
+		XCTAssertNil(alert.backgroundColor, "Broken 'backgroundColor' default value.")
+		alert.backgroundColor = testColor
+		XCTAssertNotNil(alert.backgroundColor, "Can't store 'backgroundColor' value.")
+		XCTAssert(alert.backgroundColor! == testColor, "Broken 'backgroundColor' value.")
+
+		XCTAssertNil(alert.titleColor, "Broken 'titleColor' default value.")
+		alert.titleColor = testColor
+		XCTAssertNotNil(alert.titleColor, "Can't store 'titleColor' value.")
+		XCTAssert(alert.titleColor! == testColor, "Broken 'titleColor' value.")
+
+		XCTAssertNil(alert.messageColor, "Broken 'messageColor' default value.")
+		alert.messageColor = testColor
+		XCTAssertNotNil(alert.messageColor, "Can't store 'messageColor' value.")
+		XCTAssert(alert.messageColor! == testColor, "Broken 'messageColor' value.")
+
+		XCTAssertNil(alert.borderColor, "Broken 'borderColor' default value.")
+		alert.borderColor = testColor
+		XCTAssertNotNil(alert.borderColor, "Can't store 'borderColor' value.")
+		XCTAssert(alert.borderColor! == testColor, "Broken 'borderColor' value.")
+
+		XCTAssertNil(alert.allCancelActionsColor, "Broken 'allCancelActionsColor' default value.")
+		alert.allCancelActionsColor = testColor
+		XCTAssertNotNil(alert.allCancelActionsColor, "Can't store 'allCancelActionsColor' value.")
+		XCTAssert(alert.allCancelActionsColor! == testColor, "Broken 'allCancelActionsColor' value.")
+
+		XCTAssertNil(alert.allDestructiveActionsColor, "Broken 'allDestructiveActionsColor' default value.")
+		alert.allDestructiveActionsColor = testColor
+		XCTAssertNotNil(alert.allDestructiveActionsColor, "Can't store 'allDestructiveActionsColor' value.")
+		XCTAssert(alert.allDestructiveActionsColor! == testColor, "Broken 'allDestructiveActionsColor' value.")
+
+		XCTAssertNil(alert.allDefaultActionsColor, "Broken 'allDefaultActionsColor' default value.")
+		alert.allDefaultActionsColor = testColor
+		XCTAssertNotNil(alert.allDefaultActionsColor, "Can't store 'allDefaultActionsColor' value.")
+		XCTAssert(alert.allDefaultActionsColor! == testColor, "Broken 'allDefaultActionsColor' value.")
+
+		XCTAssertNil(alert.shadowColor, "Broken 'shadowColor' default value.")
+		alert.shadowColor = testColor
+		XCTAssertNotNil(alert.shadowColor, "Can't store 'shadowColor' value.")
+		XCTAssert(alert.shadowColor! == testColor, "Broken 'shadowColor' value.")
+
 	}
 
 }

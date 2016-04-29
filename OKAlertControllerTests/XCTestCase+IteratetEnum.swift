@@ -21,51 +21,19 @@
 */
 
 
-import UIKit
+import XCTest
+@testable import OKAlertController
 
 
-class MyViewController: UIViewController {
+extension XCTestCase {
 
-	let alertTitle = "Lorem ipsum dolor sit amet"
-	let alertMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-
-	@IBAction func show() {
-
-		let alert = OKAlertController(title: alertTitle, message: alertMessage)
-
-		alert.addAction("Ut enim ad minim veniam", style: .Default) { _ in
-
+	func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
+		var i = 0
+		return AnyGenerator {
+			let next = withUnsafePointer(&i) { UnsafePointer<T>($0).memory }
+			let result: T? = next.hashValue == i ? next : nil
+			i += 1
+			return result
 		}
-
-		alert.addAction("Duis aute irure dolor", style: .Default) { _ in
-
-		}
-
-		alert.addAction("Cancel", style: .Cancel) { _ in
-
-		}
-		alert.addAction("Destructive", style: .Destructive, handler: nil)
-
-		alert.showMinimalistic()
-
-		alert.show(fromController: self, animated: true)
-
-		//alert.showOriginal()
-
-//		alert.show(fromController: self, animated: true)
 	}
-
-	override func viewDidLoad() {
-		self.view.backgroundColor = UIColor.lightGrayColor()
-		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
-	}
-
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-
-
 }
-
