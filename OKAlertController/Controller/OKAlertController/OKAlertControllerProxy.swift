@@ -93,30 +93,31 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 
 		if let color: UIColor = self[.Shadow, .Color]?.getValue() {
 			let parentBounds = container.bounds
-			for sub in container.subviews {
-				if CGRectEqualToRect(parentBounds, sub.frame) {
-					sub.backgroundColor = color
-					break
-				}
+			if let backView = container.subviews.findFirst({ CGRectEqualToRect($0.frame, parentBounds) }) {
+				backView.backgroundColor = color
 			}
 		}
 
+		var needUpdateLayer = false
+
 		if let color: UIColor = self[.Background, .Color]?.getValue() {
+			needUpdateLayer = true
 			context.backgroundColor = color
-			context.clipsToBounds = true
-			context.layer.cornerRadius = 14
 		}
 
 		if let color: UIColor = self[.Border, .Color]?.getValue() {
-			context.clipsToBounds = true
-			context.layer.cornerRadius = 14
+			needUpdateLayer = true
 			context.layer.borderColor = color.CGColor
 		}
 
 		if let number: NSNumber = self[.Border, .Width]?.getValue() {
+			needUpdateLayer = true
+			context.layer.borderWidth = CGFloat(number.floatValue)
+		}
+
+		if needUpdateLayer {
 			context.clipsToBounds = true
 			context.layer.cornerRadius = 14
-			context.layer.borderWidth = CGFloat(number.floatValue)
 		}
 
 		processSubviews(context)
