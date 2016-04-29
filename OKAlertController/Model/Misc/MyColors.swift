@@ -26,11 +26,15 @@ import UIKit
 
 public struct MyColors {
 
+	// #4A4D55
 	static var AlertTextColor = UIColor(red: 74.0 / 255, green: 77.0 / 255, blue: 85.0 / 255, alpha: 1)
 
+	// #979797
 	static var AlertBorderColor = UIColor(red: 151.0 / 255, green: 151.0 / 255, blue: 151.0 / 255.0, alpha: 1)
 
+	// #6D9EE1
 	static var AlertNormalButtonTextColor = UIColor(red: 109.0 / 255, green: 158.0 / 255, blue: 225.0 / 255, alpha: 1)
 
+	// #D3D3D3
 	static var AlertDismissButtonTextColor = UIColor(red: 211.0 / 255, green: 211.0 / 255, blue: 211.0 / 255, alpha: 1)
 }

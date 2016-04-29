@@ -24,7 +24,6 @@
 import XCTest
 @testable import OKAlertController
 
-
 extension XCTestCase {
 
 	func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {

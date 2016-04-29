@@ -47,11 +47,6 @@ class MyViewController: UIViewController {
 		alert.addAction("Destructive", style: .Destructive, handler: nil)
 
 		alert.showMinimalistic()
-
-		alert.show(fromController: self, animated: true)
-
-		//alert.showOriginal()
-
 //		alert.show(fromController: self, animated: true)
 	}
 
