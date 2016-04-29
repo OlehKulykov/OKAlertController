@@ -89,7 +89,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		}
 	}
 
-	func setup(container: UIView, context: UIView) {
+	func applySettings(container: UIView, context: UIView) {
 
 		if let color: UIColor = self[.Shadow, .Color]?.getValue() {
 			let parentBounds = container.bounds
@@ -130,10 +130,10 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	}
 
 	subscript(elemType: ElementType, paramType: ParamType) -> Param? {
-		guard let element = elements.findFirst({ $0.type == elemType}) else {
-			return nil
+		if let element = elements.findFirst({ $0.type == elemType}) {
+			return element[paramType]
 		}
-		return element[paramType]
+		return nil
 	}
 
 	func updateTypeValue(elemType: ElementType, paramType: ParamType, value: AnyObject?) -> Element {
@@ -163,7 +163,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		if let container = container, context = context {
-			setup(container, context: context)
+			applySettings(container, context: context)
 		}
 	}
 
@@ -263,7 +263,7 @@ extension OKAlertControllerProxy {
 			self.backgroundColor = UIColor.clearColor()
 			self.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
 			self.translatesAutoresizingMaskIntoConstraints = true
-			setup(container, context: context)
+			applySettings(container, context: context)
 		}
 
 		guard let animatedTransitioning = animatedTransitioning else {

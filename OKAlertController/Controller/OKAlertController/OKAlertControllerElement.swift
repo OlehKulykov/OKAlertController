@@ -37,30 +37,23 @@ internal enum OKAlertControllerElementType: Int {
 
 extension SequenceType {
 	@warn_unused_result
-	public func findFirst(@noescape includeElement: (Self.Generator.Element) -> Bool) -> Self.Generator.Element? {
+	/**
+	Locates first element that conforms `condition` handler.
+	
+	- Parameter condition: Check element `condition` clock.
+	
+	- Returns: First element that passed `condition` clock or nil.
+	*/
+	public func findFirst(@noescape condition: (Self.Generator.Element) -> Bool) -> Self.Generator.Element? {
 		for element in self {
-			if includeElement(element) {
+			if condition(element) {
 				return element
 			}
 		}
 		return nil
 	}
 }
-/*
-extension Array {
 
-	// Returns the first element satisfying the predicate, or `nil`
-	// if there is no matching element.
-	func findFirstMatching<L : BooleanType>(predicate: T -> L) -> T? {
-		for item in self {
-			if predicate(item) {
-				return item // found
-			}
-		}
-		return nil // not found
-	}
-}
-*/
 internal class OKAlertControllerElement {
 
 	typealias ElementType = OKAlertControllerElementType

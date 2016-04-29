@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "OKAlertController"
-  s.version          = "1.0.2"
+  s.version          = "1.0.3"
   s.summary          = "Customisable UIAlertController controller"
   s.description      = <<-DESC
 Customisable UIAlertController controller.
