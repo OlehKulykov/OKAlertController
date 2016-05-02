@@ -24,6 +24,7 @@
 import UIKit
 
 
+// Type of the customizable alert part.
 internal enum OKAlertControllerElementType: Int {
 	case Title
 	case Message
@@ -36,6 +37,7 @@ internal enum OKAlertControllerElementType: Int {
 }
 
 extension SequenceType {
+	// Iterate to first occurrence of the element conformed to condition.
 	@warn_unused_result
 	internal func findFirst(@noescape condition: (Self.Generator.Element) -> Bool) -> Self.Generator.Element? {
 		for element in self {
@@ -57,6 +59,7 @@ internal class OKAlertControllerElement {
 	let tag: Int
 	var params: [Param]
 
+	// generate key string for the element, based on tag.
 	var key: String {
 		return "\(tag)"
 	}
