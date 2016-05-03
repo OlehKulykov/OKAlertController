@@ -107,19 +107,19 @@ internal class OKAlertControllerElement {
 		return NSAttributedString(string: text ?? "", attributes: attributes)
 	}
 
-	// Locates and returns element parameter by it's type.
+	// Locates and returns element parameter by parameter type.
 	subscript(type: ParamType) -> Param? {
 		return params.findFirst({ $0.type == type })
 	}
 
-	// Initialize element with type and uniq tag.
+	// Initialize element with element type and uniq tag.
 	init(type: ElementType, tag: Int) {
 		self.type = type
 		self.tag = tag
 		self.params = []
 	}
 
-	// Initialize element with type, uniq tag and single parameter.
+	// Initialize element with element type, uniq tag and single parameter.
 	init(type: ElementType, tag: Int, param: Param) {
 		self.type = type
 		self.tag = tag
