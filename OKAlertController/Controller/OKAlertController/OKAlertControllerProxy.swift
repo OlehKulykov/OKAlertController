@@ -26,15 +26,25 @@ import UIKit
 
 internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDelegate, UIViewControllerInteractiveTransitioning, UIViewControllerAnimatedTransitioning {
 
+	//MARK: internal short types.
 	typealias Element = OKAlertControllerElement
 	typealias ElementType = OKAlertControllerElementType
 	typealias Param = OKAlertControllerParam
 	typealias ParamType = OKAlertControllerParamType
 
+	// Alert presentation style before customizing.
 	var modalPresentationStyle = UIModalPresentationStyle.Custom
+
+	// Original alert animated transitioning delegate.
 	weak var animatedTransitioning: UIViewControllerAnimatedTransitioning?
+
+	// Original alert interactive transitioning delegate.
 	weak var interactiveTransitioning: UIViewControllerInteractiveTransitioning?
+
+	// Original collection view with action buttons delegate.
 	weak var collectionDelegate: UICollectionViewDelegate?
+
+	// Proxy gelegate that read, intersept and provide original behavoir delegates.
 	weak var delegate: UIViewControllerTransitioningDelegate? {
 		didSet {
 			animatedTransitioning = nil
