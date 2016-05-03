@@ -51,7 +51,7 @@ extension SequenceType {
 
 internal class OKAlertControllerElement {
 
-	// Short type names for the internal data
+	// Short type names for the internal implementation.
 	typealias ElementType = OKAlertControllerElementType
 	typealias Param = OKAlertControllerParam
 	typealias ParamType = OKAlertControllerParamType
@@ -83,6 +83,8 @@ internal class OKAlertControllerElement {
 		return false
 	}
 
+	// Generate attributed string from element parameters.
+	// Used `.Text`, `.Color` and '.Font` params.
 	var attributedString: NSAttributedString {
 		var text: String?
 		var attributes = [String : AnyObject](minimumCapacity: 2)
@@ -105,16 +107,19 @@ internal class OKAlertControllerElement {
 		return NSAttributedString(string: text ?? "", attributes: attributes)
 	}
 
+	// Locates and returns element parameter by it's type.
 	subscript(type: ParamType) -> Param? {
 		return params.findFirst({ $0.type == type })
 	}
 
+	// Initialize element with type and uniq tag.
 	init(type: ElementType, tag: Int) {
 		self.type = type
 		self.tag = tag
 		self.params = []
 	}
 
+	// Initialize element with type, uniq tag and single parameter.
 	init(type: ElementType, tag: Int, param: Param) {
 		self.type = type
 		self.tag = tag
