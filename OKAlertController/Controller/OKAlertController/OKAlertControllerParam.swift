@@ -24,6 +24,8 @@
 import Foundation
 
 
+// Type of the parameter.
+// No need to make typed.
 internal enum OKAlertControllerParamType: Int {
 	case Color
 	case Font
@@ -34,15 +36,21 @@ internal enum OKAlertControllerParamType: Int {
 
 internal class OKAlertControllerParam {
 
+	// Shot parameter type.
 	typealias ParamType = OKAlertControllerParamType
 
+	// Parameter type.
 	let type: ParamType
+
+	// Any associated value.
 	var value: AnyObject?
 
+	// Cast value to requested type.
 	func getValue<T>() -> T? {
 		return value as? T
 	}
 
+	// Initialize parameter with type and optional value.
 	init(type: ParamType, value: AnyObject?) {
 		self.type = type
 		self.value = value
