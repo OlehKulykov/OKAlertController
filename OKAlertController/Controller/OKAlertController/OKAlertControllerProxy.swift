@@ -53,9 +53,9 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		return lastTag
 	}
 
-	func checkLabel(label: UILabel) {
+	func processLabel(label: UILabel) {
 		for element in elements {
-			if element.checkLabel(label) {
+			if element.processLabel(label) {
 				switch element.type {
 				case .Message, .Title:
 					if let background: UIColor = self[.Background, .Color]?.getValue() {
@@ -68,7 +68,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		}
 	}
 
-	func checkCollectionView(collection: UICollectionView) {
+	func processCollectionView(collection: UICollectionView) {
 		collection.backgroundColor = UIColor.clearColor()
 		if let background: UIColor = self[.Background, .Color]?.getValue() {
 			for cell in collection.visibleCells() {
@@ -83,9 +83,9 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		}
 
 		if let label = view as? UILabel {
-			checkLabel(label)
+			processLabel(label)
 		} else if let collection = view as? UICollectionView {
-			checkCollectionView(collection)
+			processCollectionView(collection)
 		}
 	}
 

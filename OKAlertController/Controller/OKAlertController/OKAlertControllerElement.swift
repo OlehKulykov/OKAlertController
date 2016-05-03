@@ -71,7 +71,7 @@ internal class OKAlertControllerElement {
 	}
 
 	// Check alert label conforms this element & setup.
-	func checkLabel(label: UILabel) -> Bool {
+	func processLabel(label: UILabel) -> Bool {
 		if let text = label.text {
 			let dstText: String = self[.Text]?.getValue() ?? ""
 			if label.tag == tag || text == key || text == dstText {
