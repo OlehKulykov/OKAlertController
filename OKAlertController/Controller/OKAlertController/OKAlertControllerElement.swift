@@ -24,7 +24,7 @@
 import UIKit
 
 
-// Type of the customizable alert part.
+// Customizable alert parts.
 internal enum OKAlertControllerElementType: Int {
 	case Title
 	case Message
@@ -51,19 +51,26 @@ extension SequenceType {
 
 internal class OKAlertControllerElement {
 
+	// Short type names for the internal data
 	typealias ElementType = OKAlertControllerElementType
 	typealias Param = OKAlertControllerParam
 	typealias ParamType = OKAlertControllerParamType
 
+	// Element type.
 	let type: ElementType
+
+	// Element uniq tag.
 	let tag: Int
+
+	// Parameters for this element.
 	var params: [Param]
 
-	// generate key string for the element, based on tag.
+	// Generate uniq key string for the element, based on tag.
 	var key: String {
 		return "\(tag)"
 	}
 
+	// Check alert label conforms this element & setup.
 	func checkLabel(label: UILabel) -> Bool {
 		if let text = label.text {
 			let dstText: String = self[.Text]?.getValue() ?? ""
