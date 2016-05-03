@@ -26,7 +26,7 @@ import XCTest
 
 extension XCTestCase {
 
-	// iterates enum thought all cases
+	// iterates enum thought all cases.
 	func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
 		var i = 0
 		return AnyGenerator {
