@@ -32,7 +32,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	typealias Param = OKAlertControllerParam
 	typealias ParamType = OKAlertControllerParamType
 
-	// Alert presentation style before customizing.
+	// Alert presentation style before presenting.
 	var modalPresentationStyle = UIModalPresentationStyle.Custom
 
 	// Original alert animated transitioning delegate.
@@ -57,7 +57,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	// Root wraper weak reference.
 	weak var parent: OKAlertController?
 
-	// Detected alert shadow view.
+	// Detected alert content, e.g. shadow view.
 	weak var container: UIView?
 
 	// Alert window view.
@@ -154,6 +154,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		return elements.findFirst({ $0.type == type })
 	}
 
+	// Locate and return parameter by element and param types.
 	subscript(elemType: ElementType, paramType: ParamType) -> Param? {
 		if let element = elements.findFirst({ $0.type == elemType}) {
 			return element[paramType]
@@ -161,6 +162,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		return nil
 	}
 
+	// Update existed or add new element/param view new optional value.
 	func updateTypeValue(elemType: ElementType, paramType: ParamType, value: AnyObject?) -> Element {
 		var updatedElem = false
 		var result: Element!
@@ -185,6 +187,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		return result
 	}
 
+	// Called when need to layout subviews e.g. update alert view.
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		if let container = container, context = context {
