@@ -1,3 +1,7 @@
+Changes on version 1.0.5:
+- Strongly hold proxy delegates.
+- Minor code optimization.
+
 Changes on version 1.0.4:
 - Internal logic optimization.
 
