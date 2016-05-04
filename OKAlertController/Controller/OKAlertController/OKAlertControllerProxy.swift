@@ -32,27 +32,17 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	typealias Param = OKAlertControllerParam
 	typealias ParamType = OKAlertControllerParamType
 
-	// Alert presentation style before presenting.
-	var modalPresentationStyle = UIModalPresentationStyle.Custom
-
 	// Original alert animated transitioning delegate.
-	private weak var animatedTransitioning: UIViewControllerAnimatedTransitioning?
+	private var animatedTransitioning: UIViewControllerAnimatedTransitioning?
 
 	// Original alert interactive transitioning delegate.
-	private weak var interactiveTransitioning: UIViewControllerInteractiveTransitioning?
+	private var interactiveTransitioning: UIViewControllerInteractiveTransitioning?
 
 	// Original collection view with action buttons delegate.
 	private weak var collectionDelegate: UICollectionViewDelegate?
 
 	// Proxy gelegate that read, intersept and redirect original behavoir to UIAlertController.
-	weak var delegate: UIViewControllerTransitioningDelegate? {
-		didSet {
-			animatedTransitioning = nil
-			interactiveTransitioning = nil
-			container = nil
-			context = nil
-		}
-	}
+	private var delegate: UIViewControllerTransitioningDelegate?
 
 	// Root wraper weak reference.
 	weak var parent: OKAlertController?
@@ -70,6 +60,26 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	var nextTag: Int {
 		lastTag = lastTag + 1
 		return lastTag
+	}
+
+	private func cleanup() {
+		delegate = nil
+		animatedTransitioning = nil
+		interactiveTransitioning = nil
+		collectionDelegate = nil
+		container = nil
+		context = nil
+	}
+
+	func prepareAlert(alert: UIAlertController, presenter: UIViewController) {
+		cleanup()
+		delegate = alert.transitioningDelegate
+		animatedTransitioning = delegate?.animationControllerForPresentedController?(alert, presentingController: presenter, sourceController: presenter)
+		if let animated = animatedTransitioning {
+			interactiveTransitioning = delegate?.interactionControllerForPresentation?(animated)
+		}
+		alert.transitioningDelegate = self
+		alert.modalPresentationStyle = .Custom
 	}
 
 	// Process located alert label.
@@ -195,46 +205,41 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		}
 	}
 
+	deinit {
+		cleanup()
+	}
 }
 
 // UIViewControllerTransitioningDelegate
 extension OKAlertControllerProxy {
 
 	func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-		if let delegate = delegate, method = delegate.animationControllerForPresentedController {
-			animatedTransitioning = method(presented, presentingController: presenting, sourceController: source)
+		if let animated = delegate?.animationControllerForPresentedController?(presented, presentingController: presenting, sourceController: source) {
+			animatedTransitioning = animated
 		}
 		return self
 	}
 
 	func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-		if let delegate = delegate, method = delegate.animationControllerForDismissedController {
-			animatedTransitioning = method(dismissed)
+		if let animated = delegate?.animationControllerForDismissedController?(dismissed) {
+			animatedTransitioning = animated
 		}
 		return self
 	}
 
 	func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-		guard let
-			delegate = delegate,
-			animatedTransitioning = animatedTransitioning,
-			method = delegate.interactionControllerForPresentation
-			else {
-				return nil
+		guard let animated = animatedTransitioning else {
+			return nil
 		}
-		interactiveTransitioning = method(animatedTransitioning)
+		interactiveTransitioning = delegate?.interactionControllerForPresentation?(animated)
 		return interactiveTransitioning
 	}
 
 	func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-		guard let
-			delegate = delegate,
-			originalAnimator = animatedTransitioning,
-			method = delegate.interactionControllerForDismissal
-			else {
-				return nil
+		guard let animator = animatedTransitioning else {
+			return nil
 		}
-		interactiveTransitioning = method(originalAnimator)
+		interactiveTransitioning = delegate?.interactionControllerForDismissal?(animator)
 		return interactiveTransitioning
 	}
 

@@ -66,12 +66,6 @@ public class OKAlertController {
 	/// Main setup logic.
 	private var proxy = OKAlertControllerProxy()
 
-	/// Change back original alert parameters.
-	private func proxyToAlert() {
-		alert.modalPresentationStyle = proxy.modalPresentationStyle
-		alert.transitioningDelegate = proxy.delegate
-	}
-
 	/**
 	Get/set alert title text color. 
 	The default value is `nil` - standart title text color.
@@ -296,12 +290,9 @@ public class OKAlertController {
 		- animated: Animating flag for presenting.
 	*/
 	public func show(fromController from: UIViewController, animated: Bool) {
-		proxy.delegate = alert.transitioningDelegate
-		proxy.modalPresentationStyle = alert.modalPresentationStyle
-		alert.modalPresentationStyle = .Custom
-		alert.transitioningDelegate = proxy
+		proxy.prepareAlert(alert, presenter: from)
 		from.presentViewController(alert, animated: animated) {
-			self.proxyToAlert() // hold strongly
+			_ = self // hold strongly `self`
 		}
 	}
 
