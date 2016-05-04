@@ -25,10 +25,18 @@
 		3D4FBA901CD29AC200F105A3 /* OKAlertControllerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FBA8B1CD29AC200F105A3 /* OKAlertControllerProxy.swift */; };
 		3D4FBA911CD29AC200F105A3 /* MyMinimalisticAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FBA8C1CD29AC200F105A3 /* MyMinimalisticAlertController.swift */; };
 		3DCB4EEE1CD1169900BF6F1D /* OKAlertControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB4EED1CD1169900BF6F1D /* OKAlertControllerTests.swift */; };
+		3DD15F351CDA922F000D443A /* OKAlertControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD15F341CDA922F000D443A /* OKAlertControllerUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		3DCB4EEA1CD1169900BF6F1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DCB4ECD1CD1169900BF6F1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DCB4ED41CD1169900BF6F1D;
+			remoteInfo = OKAlertController;
+		};
+		3DD15F371CDA922F000D443A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3DCB4ECD1CD1169900BF6F1D /* Project object */;
 			proxyType = 1;
@@ -60,6 +68,9 @@
 		3DCB4EE91CD1169900BF6F1D /* OKAlertControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OKAlertControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCB4EED1CD1169900BF6F1D /* OKAlertControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKAlertControllerTests.swift; sourceTree = "<group>"; };
 		3DCB4EEF1CD1169900BF6F1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DD15F321CDA922E000D443A /* OKAlertControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OKAlertControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DD15F341CDA922F000D443A /* OKAlertControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKAlertControllerUITests.swift; sourceTree = "<group>"; };
+		3DD15F361CDA922F000D443A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +82,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3DCB4EE61CD1169900BF6F1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DD15F2F1CDA922E000D443A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -159,6 +177,7 @@
 				3D0477AC1CD24E3500B28467 /* Model */,
 				3D0477961CD24CA700B28467 /* Supporting Files */,
 				3DCB4EEC1CD1169900BF6F1D /* OKAlertControllerTests */,
+				3DD15F331CDA922F000D443A /* OKAlertControllerUITests */,
 				3DCB4ED61CD1169900BF6F1D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -168,6 +187,7 @@
 			children = (
 				3DCB4ED51CD1169900BF6F1D /* OKAlertController.app */,
 				3DCB4EE91CD1169900BF6F1D /* OKAlertControllerTests.xctest */,
+				3DD15F321CDA922E000D443A /* OKAlertControllerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +201,15 @@
 				3D0154041CD33F6100CAE8C1 /* XCTestCase+IteratetEnum.swift */,
 			);
 			path = OKAlertControllerTests;
+			sourceTree = "<group>";
+		};
+		3DD15F331CDA922F000D443A /* OKAlertControllerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3DD15F341CDA922F000D443A /* OKAlertControllerUITests.swift */,
+				3DD15F361CDA922F000D443A /* Info.plist */,
+			);
+			path = OKAlertControllerUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +250,24 @@
 			productReference = 3DCB4EE91CD1169900BF6F1D /* OKAlertControllerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		3DD15F311CDA922E000D443A /* OKAlertControllerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DD15F3B1CDA922F000D443A /* Build configuration list for PBXNativeTarget "OKAlertControllerUITests" */;
+			buildPhases = (
+				3DD15F2E1CDA922E000D443A /* Sources */,
+				3DD15F2F1CDA922E000D443A /* Frameworks */,
+				3DD15F301CDA922E000D443A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DD15F381CDA922F000D443A /* PBXTargetDependency */,
+			);
+			name = OKAlertControllerUITests;
+			productName = OKAlertControllerUITests;
+			productReference = 3DD15F321CDA922E000D443A /* OKAlertControllerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -236,6 +283,10 @@
 					};
 					3DCB4EE81CD1169900BF6F1D = {
 						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 3DCB4ED41CD1169900BF6F1D;
+					};
+					3DD15F311CDA922E000D443A = {
+						CreatedOnToolsVersion = 7.3.1;
 						TestTargetID = 3DCB4ED41CD1169900BF6F1D;
 					};
 				};
@@ -255,6 +306,7 @@
 			targets = (
 				3DCB4ED41CD1169900BF6F1D /* OKAlertController */,
 				3DCB4EE81CD1169900BF6F1D /* OKAlertControllerTests */,
+				3DD15F311CDA922E000D443A /* OKAlertControllerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -274,6 +326,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3DCB4EE71CD1169900BF6F1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DD15F301CDA922E000D443A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -309,6 +368,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3DD15F2E1CDA922E000D443A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DD15F351CDA922F000D443A /* OKAlertControllerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -316,6 +383,11 @@
 			isa = PBXTargetDependency;
 			target = 3DCB4ED41CD1169900BF6F1D /* OKAlertController */;
 			targetProxy = 3DCB4EEA1CD1169900BF6F1D /* PBXContainerItemProxy */;
+		};
+		3DD15F381CDA922F000D443A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DCB4ED41CD1169900BF6F1D /* OKAlertController */;
+			targetProxy = 3DD15F371CDA922F000D443A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -451,6 +523,30 @@
 			};
 			name = Release;
 		};
+		3DD15F391CDA922F000D443A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OKAlertControllerUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LampPostLabs.OKAlertControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OKAlertController;
+			};
+			name = Debug;
+		};
+		3DD15F3A1CDA922F000D443A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OKAlertControllerUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LampPostLabs.OKAlertControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OKAlertController;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -480,6 +576,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		3DD15F3B1CDA922F000D443A /* Build configuration list for PBXNativeTarget "OKAlertControllerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DD15F391CDA922F000D443A /* Debug */,
+				3DD15F3A1CDA922F000D443A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

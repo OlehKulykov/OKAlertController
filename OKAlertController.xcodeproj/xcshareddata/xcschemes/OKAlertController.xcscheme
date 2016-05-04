@@ -38,6 +38,16 @@
                ReferencedContainer = "container:OKAlertController.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3DD15F311CDA922E000D443A"
+               BuildableName = "OKAlertControllerUITests.xctest"
+               BlueprintName = "OKAlertControllerUITests"
+               ReferencedContainer = "container:OKAlertController.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
