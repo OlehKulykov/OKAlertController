@@ -36,13 +36,13 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	var modalPresentationStyle = UIModalPresentationStyle.Custom
 
 	// Original alert animated transitioning delegate.
-	weak var animatedTransitioning: UIViewControllerAnimatedTransitioning?
+	private weak var animatedTransitioning: UIViewControllerAnimatedTransitioning?
 
 	// Original alert interactive transitioning delegate.
-	weak var interactiveTransitioning: UIViewControllerInteractiveTransitioning?
+	private weak var interactiveTransitioning: UIViewControllerInteractiveTransitioning?
 
 	// Original collection view with action buttons delegate.
-	weak var collectionDelegate: UICollectionViewDelegate?
+	private weak var collectionDelegate: UICollectionViewDelegate?
 
 	// Proxy gelegate that read, intersept and redirect original behavoir to UIAlertController.
 	weak var delegate: UIViewControllerTransitioningDelegate? {
@@ -58,10 +58,10 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	weak var parent: OKAlertController?
 
 	// Detected alert content, e.g. shadow view.
-	weak var container: UIView?
+	private weak var container: UIView?
 
 	// Alert window view.
-	weak var context: UIView?
+	private weak var context: UIView?
 
 	// Last used uniq. tag. Use `nextTag` computed variable.
 	private var lastTag = 0
@@ -73,7 +73,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	}
 
 	// Process located alert label.
-	func processLabel(label: UILabel) {
+	private func processLabel(label: UILabel) {
 		for element in elements {
 			if element.processLabel(label) {
 				switch element.type {
@@ -89,7 +89,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	}
 
 	// Process located collection view with action buttons.
-	func processCollectionView(collection: UICollectionView) {
+	private func processCollectionView(collection: UICollectionView) {
 		collection.backgroundColor = UIColor.clearColor()
 		if let background: UIColor = self[.Background, .Color]?.getValue() {
 			for cell in collection.visibleCells() {
@@ -99,7 +99,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	}
 
 	// Recursively process alert subviews.
-	func processSubviews(view: UIView) {
+	private func processSubviews(view: UIView) {
 		for sub in view.subviews {
 			processSubviews(sub)
 		}
@@ -112,7 +112,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	}
 
 	// Apply settings to the alert content and window views.
-	func applySettings(container: UIView, context: UIView) {
+	private func applySettings(container: UIView, context: UIView) {
 
 		if let color: UIColor = self[.Shadow, .Color]?.getValue() {
 			let parentBounds = container.bounds
@@ -294,11 +294,6 @@ extension OKAlertControllerProxy {
 			applySettings(container, context: context)
 		}
 
-		guard let animatedTransitioning = animatedTransitioning else {
-			return
-		}
-		animatedTransitioning.animateTransition(transitionContext)
-
 		if #available(iOS 9.0, *) {
 
 		} else {
@@ -306,6 +301,11 @@ extension OKAlertControllerProxy {
 				self?.setNeedsLayout()
 			}
 		}
+
+		guard let animatedTransitioning = animatedTransitioning else {
+			return
+		}
+		animatedTransitioning.animateTransition(transitionContext)
 	}
 
 	func animationEnded(transitionCompleted: Bool) {

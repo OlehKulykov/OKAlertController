@@ -85,7 +85,7 @@ internal class OKAlertControllerElement {
 
 	// Generate attributed string from element parameters.
 	// Used `.Text`, `.Color` and '.Font` params.
-	var attributedString: NSAttributedString {
+	private var attributedString: NSAttributedString {
 		var text: String?
 		var attributes = [String : AnyObject](minimumCapacity: 2)
 		for param in params {
