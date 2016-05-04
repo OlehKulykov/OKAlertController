@@ -44,7 +44,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	// Original collection view with action buttons delegate.
 	weak var collectionDelegate: UICollectionViewDelegate?
 
-	// Proxy gelegate that read, intersept and provide original behavoir delegates.
+	// Proxy gelegate that read, intersept and redirect original behavoir to UIAlertController.
 	weak var delegate: UIViewControllerTransitioningDelegate? {
 		didSet {
 			animatedTransitioning = nil
@@ -53,16 +53,26 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 			context = nil
 		}
 	}
+
+	// Root wraper weak reference.
 	weak var parent: OKAlertController?
+
+	// Detected alert shadow view.
 	weak var container: UIView?
+
+	// Alert window view.
 	weak var context: UIView?
 
-	var lastTag = 0
+	// Last used uniq. tag. Use `nextTag` computed variable.
+	private var lastTag = 0
+
+	// Uniq tag. Increments and returns `lastTag` value.
 	var nextTag: Int {
 		lastTag = lastTag + 1
 		return lastTag
 	}
 
+	// Process located alert label.
 	func processLabel(label: UILabel) {
 		for element in elements {
 			if element.processLabel(label) {
@@ -78,6 +88,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		}
 	}
 
+	// Process located collection view with action buttons.
 	func processCollectionView(collection: UICollectionView) {
 		collection.backgroundColor = UIColor.clearColor()
 		if let background: UIColor = self[.Background, .Color]?.getValue() {
@@ -87,6 +98,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		}
 	}
 
+	// Recursively process alert subviews.
 	func processSubviews(view: UIView) {
 		for sub in view.subviews {
 			processSubviews(sub)
@@ -99,6 +111,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		}
 	}
 
+	// Apply settings to the alert content and window views.
 	func applySettings(container: UIView, context: UIView) {
 
 		if let color: UIColor = self[.Shadow, .Color]?.getValue() {
@@ -133,8 +146,10 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		processSubviews(context)
 	}
 
+	// Array of the customizible alert elements.
 	var elements: [Element] = []
 
+	// Locate and return element by it's type.
 	subscript(type: ElementType) -> Element? {
 		return elements.findFirst({ $0.type == type })
 	}
