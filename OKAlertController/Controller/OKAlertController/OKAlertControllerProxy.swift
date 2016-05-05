@@ -62,6 +62,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		return lastTag
 	}
 
+	// Cleanup strong and weak delegates.
 	private func cleanup() {
 		delegate = nil
 		animatedTransitioning = nil
@@ -71,6 +72,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 		context = nil
 	}
 
+	// Setup alert controller before presentation.
 	func prepareAlert(alert: UIAlertController, presenter: UIViewController) {
 		cleanup()
 		delegate = alert.transitioningDelegate

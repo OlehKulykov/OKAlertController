@@ -49,8 +49,6 @@ class OKAlertControllerUITests: XCTestCase {
 			app.buttons["Show alert"].tap()
 			XCTAssertTrue(app.alerts.count == 1, "Alert not showed, broken logic")
 
-//			app.alerts["1"].collectionViews.buttons[buttonTitle]
-
 			app.alerts["1"].collectionViews.buttons[buttonTitle].tap()
 			XCTAssertTrue(app.alerts.count == 0, "Alert not dismissed, broken logic")
 		}
