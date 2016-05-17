@@ -24,7 +24,7 @@
 import UIKit
 
 
-// Customizable alert parts.
+// Customizable alert parts with color, font, width etc.
 internal enum OKAlertControllerElementType: Int {
 	case Title
 	case Message

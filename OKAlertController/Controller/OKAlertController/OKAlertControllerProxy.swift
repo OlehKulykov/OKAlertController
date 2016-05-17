@@ -212,7 +212,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	}
 }
 
-// UIViewControllerTransitioningDelegate
+//MARK: UIViewControllerTransitioningDelegate
 extension OKAlertControllerProxy {
 
 	func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -247,7 +247,7 @@ extension OKAlertControllerProxy {
 
 }
 
-// UIViewControllerInteractiveTransitioning
+//MARK: UIViewControllerInteractiveTransitioning
 extension OKAlertControllerProxy {
 	func startInteractiveTransition(transitionContext: UIViewControllerContextTransitioning) {
 		if let interactiveTransitioning = interactiveTransitioning {
@@ -276,7 +276,7 @@ extension OKAlertControllerProxy {
 	}
 }
 
-// UIViewControllerAnimatedTransitioning
+//MARK: UIViewControllerAnimatedTransitioning
 extension OKAlertControllerProxy {
 	func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
 		guard let animatedTransitioning = animatedTransitioning else {

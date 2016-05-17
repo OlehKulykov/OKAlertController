@@ -25,7 +25,7 @@ import UIKit
 
 
 /**
-Named color constants commonly used within the application.
+Named color constants, commonly used within the application.
 */
 public struct MyColors {
 
