@@ -31,8 +31,8 @@ Each case is a string file name without extension of the font.
 Example: create one of the provided custom fonts.
 
 ```swift
-	// Create 'Lato bold' font with size 16.5
-	let font = MyFont.<KEY>.fontWithSize(16.5)
+// Create 'Lato bold' font with size 16.5
+let font = MyFont.<KEY>.fontWithSize(16.5)
 ```
 */
 public enum MyFont: String {
