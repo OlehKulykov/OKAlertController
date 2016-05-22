@@ -38,24 +38,24 @@ before show make you application specific customization.
 Example:
 
 ```swift
-	// Create alert.
-	let alert = OKAlertController(title: "Some title", message: "Alert message")
+// Create alert.
+let alert = OKAlertController(title: "Some title", message: "Alert message")
 
-	// Add actions
-	alert.addAction("Ut enim ad minim veniam", style: .Default) { _ in
+// Add actions
+alert.addAction("Ut enim ad minim veniam", style: .Default) { _ in
 
-	}
+}
 
-	alert.addAction("Cancel", style: .Cancel) { _ in
+alert.addAction("Cancel", style: .Cancel) { _ in
 
-	}
+}
 
-	//TODO: setup controller with custom colors, fonts, etc.
-	alert.shadowColor = UIColor(white: 1, alpha: 0.79)
-	alert.backgroundColor = UIColor.whiteColor()
+//TODO: setup controller with custom colors, fonts, etc.
+alert.shadowColor = UIColor(white: 1, alpha: 0.79)
+alert.backgroundColor = UIColor.whiteColor()
 
-	// Finaly show controller
-	alert.show(fromController: self, animated: true)
+// Finaly show controller
+alert.show(fromController: self, animated: true)
 ```
 */
 public class OKAlertController {
