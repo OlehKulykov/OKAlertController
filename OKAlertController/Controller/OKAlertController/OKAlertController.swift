@@ -320,7 +320,7 @@ public class OKAlertController {
 
 		let element = OKAlertControllerProxy.Element(type: type, tag: proxy.nextTag, param: OKAlertControllerProxy.Param(type: .Text, value: title))
 		proxy.elements.append(element)
-		alert.addAction(UIAlertAction(title: element.key, style: style, handler: nil))
+		alert.addAction(UIAlertAction(title: element.key, style: style, handler: handler))
 	}
 
 
