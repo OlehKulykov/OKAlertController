@@ -34,15 +34,15 @@ class MyViewController: UIViewController {
 		let alert = OKAlertController(title: alertTitle, message: alertMessage)
 
 		alert.addAction("Ut enim ad minim veniam", style: .Default) { _ in
-
+			print("Ut enim ad minim veniam")
 		}
 
 		alert.addAction("Duis aute irure dolor", style: .Default) { _ in
-
+			print("Duis aute irure dolor")
 		}
 
 		alert.addAction("Cancel", style: .Cancel) { _ in
-
+			print("Cancel")
 		}
 		alert.addAction("Destructive", style: .Destructive, handler: nil)
 
