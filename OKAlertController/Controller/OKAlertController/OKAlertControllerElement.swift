@@ -77,6 +77,12 @@ internal class OKAlertControllerElement {
 			if label.tag == tag || text == key || text == dstText {
 				label.tag = tag
 				label.attributedText = attributedString // assigning a new a value updates the values in the font, textColor
+				if #available(iOS 10.0, *) {
+					if let parent = label.superview?.superview {
+						parent.setNeedsLayout()
+						parent.setNeedsDisplay()
+					}
+				}
 				return true
 			}
 		}

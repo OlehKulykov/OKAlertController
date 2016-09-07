@@ -285,20 +285,24 @@ extension OKAlertControllerProxy {
 		return animatedTransitioning.transitionDuration(transitionContext)
 	}
 
+	private func animate(container: UIView?, context: UIView) {
+		guard let container = container else {
+			return
+		}
+		self.container = container
+		self.context = context
+		container.insertSubview(self, atIndex: 0)
+		container.autoresizesSubviews = true
+		self.bounds = container.bounds
+		self.backgroundColor = UIColor.clearColor()
+		self.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+		self.translatesAutoresizingMaskIntoConstraints = true
+		applySettings(container, context: context)
+	}
+	
 	func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-		if let
-			container = transitionContext.containerView(),
-			context = transitionContext.viewForKey(UITransitionContextToViewKey)
-		{
-			self.container = container
-			self.context = context
-			container.insertSubview(self, atIndex: 0)
-			container.autoresizesSubviews = true
-			self.bounds = container.bounds
-			self.backgroundColor = UIColor.clearColor()
-			self.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-			self.translatesAutoresizingMaskIntoConstraints = true
-			applySettings(container, context: context)
+		if let context = transitionContext.viewForKey(UITransitionContextToViewKey) {
+			animate(transitionContext.containerView(), context: context)
 		}
 
 		if #available(iOS 9.0, *) {
