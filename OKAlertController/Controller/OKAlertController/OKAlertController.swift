@@ -58,25 +58,25 @@ alert.backgroundColor = UIColor.whiteColor()
 alert.show(fromController: self, animated: true)
 ```
 */
-public class OKAlertController {
+open class OKAlertController {
 
 	/// Actual `UIAlertController` for setup and show.
-	private var alert: UIAlertController!
+	fileprivate var alert: UIAlertController!
 
 	/// Main setup logic.
-	private var proxy = OKAlertControllerProxy()
+	fileprivate var proxy = OKAlertControllerProxy()
 
 	/**
 	Get/set alert title text color. 
 	The default value is `nil` - standart title text color.
 	Provide `nil` to remove/ignore title text color modification and use standart.
 	*/
-	public var titleColor: UIColor? {
+	open var titleColor: UIColor? {
 		get {
-			return proxy[.Title, .Color]?.getValue()
+			return proxy[.title, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.Title, paramType: .Color, value: newValue)
+			proxy.updateTypeValue(.title, paramType: .color, value: newValue)
 		}
 	}
 
@@ -86,12 +86,12 @@ public class OKAlertController {
 	The default value is `nil` - standart title font.
 	Provide `nil` to remove/ignore title font modification and use standart.
 	*/
-	public var titleFont: UIFont? {
+	open var titleFont: UIFont? {
 		get {
-			return proxy[.Title, .Font]?.getValue()
+			return proxy[.title, .font]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.Title, paramType: .Font, value: newValue)
+			proxy.updateTypeValue(.title, paramType: .font, value: newValue)
 		}
 	}
 
@@ -101,12 +101,12 @@ public class OKAlertController {
 	The default value is `nil` - standart message text color.
 	Provide `nil` to remove/ignore message text color modification and use standart.
 	*/
-	public var messageColor: UIColor? {
+	open var messageColor: UIColor? {
 		get {
-			return proxy[.Message, .Color]?.getValue()
+			return proxy[.message, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.Message, paramType: .Color, value: newValue)
+			proxy.updateTypeValue(.message, paramType: .color, value: newValue)
 		}
 	}
 
@@ -116,12 +116,12 @@ public class OKAlertController {
 	The default value is `nil` - standart message font.
 	Provide `nil` to remove/ignore message font modification and use standart.
 	*/
-	public var messageFont: UIFont? {
+	open var messageFont: UIFont? {
 		get {
-			return proxy[.Message, .Font]?.getValue()
+			return proxy[.message, .font]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.Message, paramType: .Font, value: newValue)
+			proxy.updateTypeValue(.message, paramType: .font, value: newValue)
 		}
 	}
 
@@ -131,12 +131,12 @@ public class OKAlertController {
 	The default value is `nil` - standart background window color.
 	Provide `nil` to remove/ignore background window color modification and use standart.
 	*/
-	public var backgroundColor: UIColor? {
+	open var backgroundColor: UIColor? {
 		get {
-			return proxy[.Background, .Color]?.getValue()
+			return proxy[.background, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.Background, paramType: .Color, value: newValue)
+			proxy.updateTypeValue(.background, paramType: .color, value: newValue)
 		}
 	}
 
@@ -146,12 +146,12 @@ public class OKAlertController {
 	The default value is `nil` - standart default actions text font.
 	Provide `nil` to remove/ignore default actions text font modification and use standart.
 	*/
-	public var allDefaultActionsFont: UIFont? {
+	open var allDefaultActionsFont: UIFont? {
 		get {
-			return proxy[.AllDefaultActions, .Font]?.getValue()
+			return proxy[.allDefaultActions, .font]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.AllDefaultActions, paramType: .Font, value: newValue)
+			proxy.updateTypeValue(.allDefaultActions, paramType: .font, value: newValue)
 		}
 	}
 
@@ -161,12 +161,12 @@ public class OKAlertController {
 	The default value is `nil` - standart default actions text color.
 	Provide `nil` to remove/ignore default actions text color modification and use standart.
 	*/
-	public var allDefaultActionsColor: UIColor? {
+	open var allDefaultActionsColor: UIColor? {
 		get {
-			return proxy[.AllDefaultActions, .Color]?.getValue()
+			return proxy[.allDefaultActions, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.AllDefaultActions, paramType: .Color, value: newValue)
+			proxy.updateTypeValue(.allDefaultActions, paramType: .color, value: newValue)
 		}
 	}
 
@@ -176,12 +176,12 @@ public class OKAlertController {
 	The default value is `nil` - standart cancel actions text font.
 	Provide `nil` to remove/ignore cancel actions text font modification and use standart.
 	*/
-	public var allCancelActionsFont: UIFont? {
+	open var allCancelActionsFont: UIFont? {
 		get {
-			return proxy[.AllCancelActions, .Font]?.getValue()
+			return proxy[.allCancelActions, .font]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.AllCancelActions, paramType: .Font, value: newValue)
+			proxy.updateTypeValue(.allCancelActions, paramType: .font, value: newValue)
 		}
 	}
 
@@ -191,12 +191,12 @@ public class OKAlertController {
 	The default value is `nil` - standart cancel actions text color.
 	Provide `nil` to remove/ignore cancel actions color color modification and use standart.
 	*/
-	public var allCancelActionsColor: UIColor? {
+	open var allCancelActionsColor: UIColor? {
 		get {
-			return proxy[.AllCancelActions, .Color]?.getValue()
+			return proxy[.allCancelActions, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.AllCancelActions, paramType: .Color, value: newValue)
+			proxy.updateTypeValue(.allCancelActions, paramType: .color, value: newValue)
 		}
 	}
 
@@ -206,12 +206,12 @@ public class OKAlertController {
 	The default value is `nil` - standart destructive actions text font.
 	Provide `nil` to remove/ignore destructive actions text font modification and use standart.
 	*/
-	public var allDestructiveActionsFont: UIFont? {
+	open var allDestructiveActionsFont: UIFont? {
 		get {
-			return proxy[.AllDestructiveActions, .Font]?.getValue()
+			return proxy[.allDestructiveActions, .font]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.AllDestructiveActions, paramType: .Font, value: newValue)
+			proxy.updateTypeValue(.allDestructiveActions, paramType: .font, value: newValue)
 		}
 	}
 
@@ -221,12 +221,12 @@ public class OKAlertController {
 	The default value is `nil` - standart destructive actions text color.
 	Provide `nil` to remove/ignore destructive actions text color modification and use standart.
 	*/
-	public var allDestructiveActionsColor: UIColor? {
+	open var allDestructiveActionsColor: UIColor? {
 		get {
-			return proxy[.AllDestructiveActions, .Color]?.getValue()
+			return proxy[.allDestructiveActions, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.AllDestructiveActions, paramType: .Color, value: newValue)
+			proxy.updateTypeValue(.allDestructiveActions, paramType: .color, value: newValue)
 		}
 	}
 
@@ -236,12 +236,12 @@ public class OKAlertController {
 	The default value is `nil` - standart shadow color.
 	Provide `nil` to remove/ignore destructive shadow color modification and use standart.
 	*/
-	public var shadowColor: UIColor? {
+	open var shadowColor: UIColor? {
 		get {
-			return proxy[.Shadow, .Color]?.getValue()
+			return proxy[.shadow, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.Shadow, paramType: .Color, value: newValue)
+			proxy.updateTypeValue(.shadow, paramType: .color, value: newValue)
 		}
 	}
 
@@ -251,12 +251,12 @@ public class OKAlertController {
 	The default value is `nil` - standart window border color.
 	Provide `nil` to remove/ignore destructive window border color modification and use standart.
 	*/
-	public var borderColor: UIColor? {
+	open var borderColor: UIColor? {
 		get {
-			return proxy[.Border, .Color]?.getValue()
+			return proxy[.border, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.Border, paramType: .Color, value: newValue)
+			proxy.updateTypeValue(.border, paramType: .color, value: newValue)
 		}
 	}
 
@@ -265,16 +265,16 @@ public class OKAlertController {
 	Get/set alert window border line width.
 	The default and minimum value is 0.
 	*/
-	public var borderWidth: CGFloat {
+	open var borderWidth: CGFloat {
 		get {
-			if let number: NSNumber = proxy[.Border, .Width]?.getValue() {
+			if let number: NSNumber = proxy[.border, .width]?.getValue() {
 				return CGFloat(number.floatValue)
 			}
 			return 0
 		}
 		set {
 			let newWidth = max(0, newValue)
-			proxy.updateTypeValue(.Border, paramType: .Width, value: NSNumber(float: Float(newWidth)))
+			proxy.updateTypeValue(.border, paramType: .width, value: NSNumber(value: Float(newWidth) as Float))
 		}
 	}
 
@@ -289,9 +289,9 @@ public class OKAlertController {
 
 		- animated: Animating flag for presenting.
 	*/
-	public func show(fromController from: UIViewController, animated: Bool) {
+	open func show(fromController from: UIViewController, animated: Bool) {
 		proxy.prepareAlert(alert, presenter: from)
-		from.presentViewController(alert, animated: animated) {
+		from.present(alert, animated: animated) {
 			_ = self // hold strongly `self`
 		}
 	}
@@ -307,18 +307,18 @@ public class OKAlertController {
 	
 		- handler: Handler to insform outside logic that the action was trigered.
 	*/
-	public func addAction(title: String?, style: UIAlertActionStyle, handler: ((UIAlertAction) -> Void)?) {
+	open func addAction(_ title: String?, style: UIAlertActionStyle, handler: ((UIAlertAction) -> Void)?) {
 		let type: OKAlertControllerProxy.ElementType
 		switch style {
-		case .Default:
-			type = .AllDefaultActions
-		case .Cancel:
-			type = .AllCancelActions
-		case .Destructive:
-			type = .AllDestructiveActions
+		case .default:
+			type = .allDefaultActions
+		case .cancel:
+			type = .allCancelActions
+		case .destructive:
+			type = .allDestructiveActions
 		}
 
-		let element = OKAlertControllerProxy.Element(type: type, tag: proxy.nextTag, param: OKAlertControllerProxy.Param(type: .Text, value: title))
+		let element = OKAlertControllerProxy.Element(type: type, tag: proxy.nextTag, param: OKAlertControllerProxy.Param(type: .text, value: title as AnyObject))
 		proxy.elements.append(element)
 		alert.addAction(UIAlertAction(title: element.key, style: style, handler: handler))
 	}
@@ -336,9 +336,9 @@ public class OKAlertController {
 	
 	- Returns: Initialized alert controller.
 	*/
-	public init(title: String?, message: String?, preferredStyle: UIAlertControllerStyle = .Alert) {
-		let titleElement = proxy.updateTypeValue(.Title, paramType: .Text, value: title)
-		let messageElement = proxy.updateTypeValue(.Message, paramType: .Text, value: message)
+	public init(title: String?, message: String?, preferredStyle: UIAlertControllerStyle = .alert) {
+		let titleElement = proxy.updateTypeValue(.title, paramType: .text, value: title as AnyObject?)
+		let messageElement = proxy.updateTypeValue(.message, paramType: .text, value: message as AnyObject?)
 		alert = UIAlertController(title: titleElement.key, message: messageElement.key, preferredStyle: preferredStyle)
 	}
 	

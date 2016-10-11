@@ -27,10 +27,10 @@ import Foundation
 // Type of the parameter.
 // No need to make typed.
 internal enum OKAlertControllerParamType: Int {
-	case Color
-	case Font
-	case Text
-	case Width
+	case color
+	case font
+	case text
+	case width
 }
 
 

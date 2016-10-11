@@ -27,7 +27,7 @@ import UIKit
 extension OKAlertController {
 
 	func showOriginal() {
-		guard let rootController = UIApplication.sharedApplication().delegate?.window??.rootViewController else {
+		guard let rootController = UIApplication.shared.delegate?.window??.rootViewController else {
 			return
 		}
 		show(fromController: rootController, animated: true)
@@ -35,12 +35,12 @@ extension OKAlertController {
 
 	func showMinimalistic() {
 
-		guard let rootController = UIApplication.sharedApplication().delegate?.window??.rootViewController else {
+		guard let rootController = UIApplication.shared.delegate?.window??.rootViewController else {
 			return
 		}
 
 		self.shadowColor = UIColor(white: 1, alpha: 0.79)
-		self.backgroundColor = UIColor.whiteColor()
+		self.backgroundColor = UIColor.white
 
 		self.titleFont = MyFont.LatoBold.fontWithSize(18)
 		self.titleColor = MyColors.AlertTextColor

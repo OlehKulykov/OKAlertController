@@ -33,28 +33,28 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	typealias ParamType = OKAlertControllerParamType
 
 	// Original alert animated transitioning delegate.
-	private var animatedTransitioning: UIViewControllerAnimatedTransitioning?
+	fileprivate var animatedTransitioning: UIViewControllerAnimatedTransitioning?
 
 	// Original alert interactive transitioning delegate.
-	private var interactiveTransitioning: UIViewControllerInteractiveTransitioning?
+	fileprivate var interactiveTransitioning: UIViewControllerInteractiveTransitioning?
 
 	// Original collection view with action buttons delegate.
-	private weak var collectionDelegate: UICollectionViewDelegate?
+	fileprivate weak var collectionDelegate: UICollectionViewDelegate?
 
 	// Proxy gelegate that read, intersept and redirect original behavoir to UIAlertController.
-	private var delegate: UIViewControllerTransitioningDelegate?
+	fileprivate var delegate: UIViewControllerTransitioningDelegate?
 
 	// Root wraper weak reference.
 	weak var parent: OKAlertController?
 
 	// Detected alert content, e.g. shadow view.
-	private weak var container: UIView?
+	fileprivate weak var container: UIView?
 
 	// Alert window view.
-	private weak var context: UIView?
+	fileprivate weak var context: UIView?
 
 	// Last used uniq. tag. Use `nextTag` computed variable.
-	private var lastTag = 0
+	fileprivate var lastTag = 0
 
 	// Uniq tag. Increments and returns `lastTag` value.
 	var nextTag: Int {
@@ -63,7 +63,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	}
 
 	// Cleanup strong and weak delegates.
-	private func cleanup() {
+	fileprivate func cleanup() {
 		delegate = nil
 		animatedTransitioning = nil
 		interactiveTransitioning = nil
@@ -73,24 +73,24 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	}
 
 	// Setup alert controller before presentation.
-	func prepareAlert(alert: UIAlertController, presenter: UIViewController) {
+	func prepareAlert(_ alert: UIAlertController, presenter: UIViewController) {
 		cleanup()
 		delegate = alert.transitioningDelegate
-		animatedTransitioning = delegate?.animationControllerForPresentedController?(alert, presentingController: presenter, sourceController: presenter)
+		animatedTransitioning = delegate?.animationController?(forPresented: alert, presenting: presenter, source: presenter)
 		if let animated = animatedTransitioning {
-			interactiveTransitioning = delegate?.interactionControllerForPresentation?(animated)
+			interactiveTransitioning = delegate?.interactionControllerForPresentation?(using: animated)
 		}
 		alert.transitioningDelegate = self
-		alert.modalPresentationStyle = .Custom
+		alert.modalPresentationStyle = .custom
 	}
 
 	// Process located alert label.
-	private func processLabel(label: UILabel) {
+	fileprivate func processLabel(_ label: UILabel) {
 		for element in elements {
 			if element.processLabel(label) {
 				switch element.type {
-				case .Message, .Title:
-					if let background: UIColor = self[.Background, .Color]?.getValue() {
+				case .message, .title:
+					if let background: UIColor = self[.background, .color]?.getValue() {
 						label.superview?.backgroundColor = background
 					}
 				default:
@@ -101,17 +101,17 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	}
 
 	// Process located collection view with action buttons.
-	private func processCollectionView(collection: UICollectionView) {
-		collection.backgroundColor = UIColor.clearColor()
-		if let background: UIColor = self[.Background, .Color]?.getValue() {
-			for cell in collection.visibleCells() {
+	fileprivate func processCollectionView(_ collection: UICollectionView) {
+		collection.backgroundColor = UIColor.clear
+		if let background: UIColor = self[.background, .color]?.getValue() {
+			for cell in collection.visibleCells {
 				cell.contentView.backgroundColor = background
 			}
 		}
 	}
 
 	// Recursively process alert subviews.
-	private func processSubviews(view: UIView) {
+	fileprivate func processSubviews(_ view: UIView) {
 		for sub in view.subviews {
 			processSubviews(sub)
 		}
@@ -124,28 +124,28 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	}
 
 	// Apply settings to the alert content and window views.
-	private func applySettings(container: UIView, context: UIView) {
+	fileprivate func applySettings(_ container: UIView, context: UIView) {
 
-		if let color: UIColor = self[.Shadow, .Color]?.getValue() {
+		if let color: UIColor = self[.shadow, .color]?.getValue() {
 			let parentBounds = container.bounds
-			if let backView = container.subviews.findFirst({ CGRectEqualToRect($0.frame, parentBounds) }) {
+			if let backView = container.subviews.findFirst({ $0.frame.equalTo(parentBounds) }) {
 				backView.backgroundColor = color
 			}
 		}
 
 		var needUpdateLayer = false
 
-		if let color: UIColor = self[.Background, .Color]?.getValue() {
+		if let color: UIColor = self[.background, .color]?.getValue() {
 			needUpdateLayer = true
 			context.backgroundColor = color
 		}
 
-		if let color: UIColor = self[.Border, .Color]?.getValue() {
+		if let color: UIColor = self[.border, .color]?.getValue() {
 			needUpdateLayer = true
-			context.layer.borderColor = color.CGColor
+			context.layer.borderColor = color.cgColor
 		}
 
-		if let number: NSNumber = self[.Border, .Width]?.getValue() {
+		if let number: NSNumber = self[.border, .width]?.getValue() {
 			needUpdateLayer = true
 			context.layer.borderWidth = CGFloat(number.floatValue)
 		}
@@ -175,7 +175,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	}
 
 	// Update existed or add new element/param view new optional value.
-	func updateTypeValue(elemType: ElementType, paramType: ParamType, value: AnyObject?) -> Element {
+	func updateTypeValue(_ elemType: ElementType, paramType: ParamType, value: AnyObject?) -> Element {
 		var updatedElem = false
 		var result: Element!
 		let elems = elements.filter({ $0.type == elemType })
@@ -202,7 +202,7 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 	// Called when need to layout subviews e.g. update alert view.
 	override func layoutSubviews() {
 		super.layoutSubviews()
-		if let container = container, context = context {
+		if let container = container, let context = context {
 			applySettings(container, context: context)
 		}
 	}
@@ -215,33 +215,33 @@ internal class OKAlertControllerProxy: UIView, UIViewControllerTransitioningDele
 //MARK: UIViewControllerTransitioningDelegate
 extension OKAlertControllerProxy {
 
-	func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-		if let animated = delegate?.animationControllerForPresentedController?(presented, presentingController: presenting, sourceController: source) {
+	@objc(animationControllerForPresentedController:presentingController:sourceController:) func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		if let animated = delegate?.animationController?(forPresented: presented, presenting: presenting, source: source) {
 			animatedTransitioning = animated
 		}
 		return self
 	}
 
-	func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-		if let animated = delegate?.animationControllerForDismissedController?(dismissed) {
+	@objc(animationControllerForDismissedController:) func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		if let animated = delegate?.animationController?(forDismissed: dismissed) {
 			animatedTransitioning = animated
 		}
 		return self
 	}
 
-	func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+	@objc(interactionControllerForPresentation:) func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
 		guard let animated = animatedTransitioning else {
 			return nil
 		}
-		interactiveTransitioning = delegate?.interactionControllerForPresentation?(animated)
+		interactiveTransitioning = delegate?.interactionControllerForPresentation?(using: animated)
 		return interactiveTransitioning
 	}
 
-	func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+	@objc(interactionControllerForDismissal:) func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
 		guard let animator = animatedTransitioning else {
 			return nil
 		}
-		interactiveTransitioning = delegate?.interactionControllerForDismissal?(animator)
+		interactiveTransitioning = delegate?.interactionControllerForDismissal?(using: animator)
 		return interactiveTransitioning
 	}
 
@@ -249,80 +249,80 @@ extension OKAlertControllerProxy {
 
 //MARK: UIViewControllerInteractiveTransitioning
 extension OKAlertControllerProxy {
-	func startInteractiveTransition(transitionContext: UIViewControllerContextTransitioning) {
+	func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
 		if let interactiveTransitioning = interactiveTransitioning {
 			interactiveTransitioning.startInteractiveTransition(transitionContext)
 		}
 	}
 
-	func completionSpeed() -> CGFloat {
+	var completionSpeed : CGFloat {
 		guard let
 			interactiveTransitioning = interactiveTransitioning,
-			method = interactiveTransitioning.completionSpeed
+			let method = interactiveTransitioning.completionSpeed
 			else {
 				return 0.24
 		}
-		return method()
+		return method
 	}
 
-	func completionCurve() -> UIViewAnimationCurve {
+	var completionCurve : UIViewAnimationCurve {
 		guard let
 			interactiveTransitioning = interactiveTransitioning,
-			method = interactiveTransitioning.completionCurve
+			let method = interactiveTransitioning.completionCurve
 			else {
-				return .EaseIn
+				return .easeIn
 		}
-		return method()
+		return method
 	}
 }
 
 //MARK: UIViewControllerAnimatedTransitioning
 extension OKAlertControllerProxy {
-	func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+	@objc(transitionDuration:) func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
 		guard let animatedTransitioning = animatedTransitioning else {
 			return 0.24
 		}
-		return animatedTransitioning.transitionDuration(transitionContext)
+		return animatedTransitioning.transitionDuration(using: transitionContext)
 	}
 
-	private func animate(container: UIView?, context: UIView) {
+	fileprivate func animate(_ container: UIView?, context: UIView) {
 		guard let container = container else {
 			return
 		}
 		self.container = container
 		self.context = context
-		container.insertSubview(self, atIndex: 0)
+		container.insertSubview(self, at: 0)
 		container.autoresizesSubviews = true
 		self.bounds = container.bounds
-		self.backgroundColor = UIColor.clearColor()
-		self.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+		self.backgroundColor = UIColor.clear
+		self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 		self.translatesAutoresizingMaskIntoConstraints = true
 		applySettings(container, context: context)
 	}
 	
-	func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-		if let context = transitionContext.viewForKey(UITransitionContextToViewKey) {
-			animate(transitionContext.containerView(), context: context)
+	@objc(animateTransition:) func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+		if let context = transitionContext.view(forKey: UITransitionContextViewKey.to) {
+			animate(transitionContext.containerView, context: context)
 		}
 
 		if #available(iOS 9.0, *) {
 
 		} else {
-			UIView.animateWithDuration(0.1) { [weak self] in
+			UIView.animate(withDuration: 0.1, animations: { [weak self] in
 				self?.setNeedsLayout()
-			}
+			}) 
 		}
 
 		guard let animatedTransitioning = animatedTransitioning else {
 			return
 		}
-		animatedTransitioning.animateTransition(transitionContext)
+		animatedTransitioning.animateTransition(using: transitionContext)
 	}
 
-	func animationEnded(transitionCompleted: Bool) {
+	func animationEnded(_ transitionCompleted: Bool) {
 		guard let
 			animatedTransitioning = animatedTransitioning,
-			method = animatedTransitioning.animationEnded
+			let method = animatedTransitioning.animationEnded
 			else {
 				return
 		}

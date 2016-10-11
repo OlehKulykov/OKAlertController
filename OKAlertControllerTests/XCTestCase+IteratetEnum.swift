@@ -27,10 +27,10 @@ import XCTest
 extension XCTestCase {
 
 	// iterates enum thought all cases.
-	func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
+	func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
 		var i = 0
-		return AnyGenerator {
-			let next = withUnsafePointer(&i) { UnsafePointer<T>($0).memory }
+		return AnyIterator {
+			let next = withUnsafePointer(to: &i) { UnsafePointer<T>($0).pointee }
 			let result: T? = next.hashValue == i ? next : nil
 			i += 1
 			return result
