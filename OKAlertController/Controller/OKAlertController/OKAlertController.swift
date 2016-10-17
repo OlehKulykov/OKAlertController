@@ -76,7 +76,7 @@ open class OKAlertController {
 			return proxy[.title, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.title, paramType: .color, value: newValue)
+			let _ = proxy.updateTypeValue(.title, paramType: .color, value: newValue)
 		}
 	}
 
@@ -91,7 +91,7 @@ open class OKAlertController {
 			return proxy[.title, .font]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.title, paramType: .font, value: newValue)
+			let _ = proxy.updateTypeValue(.title, paramType: .font, value: newValue)
 		}
 	}
 
@@ -106,7 +106,7 @@ open class OKAlertController {
 			return proxy[.message, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.message, paramType: .color, value: newValue)
+			let _ = proxy.updateTypeValue(.message, paramType: .color, value: newValue)
 		}
 	}
 
@@ -121,7 +121,7 @@ open class OKAlertController {
 			return proxy[.message, .font]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.message, paramType: .font, value: newValue)
+			let _ = proxy.updateTypeValue(.message, paramType: .font, value: newValue)
 		}
 	}
 
@@ -136,7 +136,7 @@ open class OKAlertController {
 			return proxy[.background, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.background, paramType: .color, value: newValue)
+			let _ = proxy.updateTypeValue(.background, paramType: .color, value: newValue)
 		}
 	}
 
@@ -151,7 +151,7 @@ open class OKAlertController {
 			return proxy[.allDefaultActions, .font]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.allDefaultActions, paramType: .font, value: newValue)
+			let _ = proxy.updateTypeValue(.allDefaultActions, paramType: .font, value: newValue)
 		}
 	}
 
@@ -166,7 +166,7 @@ open class OKAlertController {
 			return proxy[.allDefaultActions, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.allDefaultActions, paramType: .color, value: newValue)
+			let _ = proxy.updateTypeValue(.allDefaultActions, paramType: .color, value: newValue)
 		}
 	}
 
@@ -181,7 +181,7 @@ open class OKAlertController {
 			return proxy[.allCancelActions, .font]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.allCancelActions, paramType: .font, value: newValue)
+			let _ = proxy.updateTypeValue(.allCancelActions, paramType: .font, value: newValue)
 		}
 	}
 
@@ -196,7 +196,7 @@ open class OKAlertController {
 			return proxy[.allCancelActions, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.allCancelActions, paramType: .color, value: newValue)
+			let _ = proxy.updateTypeValue(.allCancelActions, paramType: .color, value: newValue)
 		}
 	}
 
@@ -211,7 +211,7 @@ open class OKAlertController {
 			return proxy[.allDestructiveActions, .font]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.allDestructiveActions, paramType: .font, value: newValue)
+			let _ = proxy.updateTypeValue(.allDestructiveActions, paramType: .font, value: newValue)
 		}
 	}
 
@@ -226,7 +226,7 @@ open class OKAlertController {
 			return proxy[.allDestructiveActions, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.allDestructiveActions, paramType: .color, value: newValue)
+			let _ = proxy.updateTypeValue(.allDestructiveActions, paramType: .color, value: newValue)
 		}
 	}
 
@@ -241,7 +241,7 @@ open class OKAlertController {
 			return proxy[.shadow, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.shadow, paramType: .color, value: newValue)
+			let _ = proxy.updateTypeValue(.shadow, paramType: .color, value: newValue)
 		}
 	}
 
@@ -256,7 +256,7 @@ open class OKAlertController {
 			return proxy[.border, .color]?.getValue()
 		}
 		set {
-			proxy.updateTypeValue(.border, paramType: .color, value: newValue)
+			let _ = proxy.updateTypeValue(.border, paramType: .color, value: newValue)
 		}
 	}
 
@@ -274,7 +274,7 @@ open class OKAlertController {
 		}
 		set {
 			let newWidth = max(0, newValue)
-			proxy.updateTypeValue(.border, paramType: .width, value: NSNumber(value: Float(newWidth) as Float))
+			let _ = proxy.updateTypeValue(.border, paramType: .width, value: NSNumber(value: Float(newWidth) as Float))
 		}
 	}
 
