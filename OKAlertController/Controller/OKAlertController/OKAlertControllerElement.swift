@@ -26,20 +26,20 @@ import UIKit
 
 // Customizable alert parts with color, font, width etc.
 internal enum OKAlertControllerElementType: Int {
-	case Title
-	case Message
-	case Background
-	case AllDefaultActions
-	case AllCancelActions
-	case AllDestructiveActions
-	case Shadow
-	case Border
+	case title
+	case message
+	case background
+	case allDefaultActions
+	case allCancelActions
+	case allDestructiveActions
+	case shadow
+	case border
 }
 
-extension SequenceType {
+extension Sequence {
 	// Iterate to first occurrence of the element conformed to condition.
-	@warn_unused_result
-	internal func findFirst(@noescape condition: (Self.Generator.Element) -> Bool) -> Self.Generator.Element? {
+	
+	internal func findFirst(_ condition: (Self.Iterator.Element) -> Bool) -> Self.Iterator.Element? {
 		for element in self {
 			if condition(element) {
 				return element
@@ -71,9 +71,9 @@ internal class OKAlertControllerElement {
 	}
 
 	// Check alert label conforms this element & setup.
-	func processLabel(label: UILabel) -> Bool {
+	func processLabel(_ label: UILabel) -> Bool {
 		if let text = label.text {
-			let dstText: String = self[.Text]?.getValue() ?? ""
+			let dstText: String = self[.text]?.getValue() ?? ""
 			if label.tag == tag || text == key || text == dstText {
 				label.tag = tag
 				label.attributedText = attributedString // assigning a new a value updates the values in the font, textColor
@@ -91,18 +91,18 @@ internal class OKAlertControllerElement {
 
 	// Generate attributed string from element parameters.
 	// Used `.Text`, `.Color` and '.Font` params.
-	private var attributedString: NSAttributedString {
+	fileprivate var attributedString: NSAttributedString {
 		var text: String?
 		var attributes = [String : AnyObject](minimumCapacity: 2)
 		for param in params {
 			switch param.type {
-			case .Text:
+			case .text:
 				text = param.getValue()
-			case .Color:
+			case .color:
 				if let color: UIColor = param.getValue() {
 					attributes[NSForegroundColorAttributeName] = color
 				}
-			case .Font:
+			case .font:
 				if let font: UIFont = param.getValue() {
 					attributes[NSFontAttributeName] = font
 				}

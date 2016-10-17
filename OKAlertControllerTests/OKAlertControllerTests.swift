@@ -27,13 +27,13 @@ import XCTest
 class OKAlertControllerTests: XCTestCase {
 
 	let testFont = MyFont.LatoBold.fontWithSize(18)
-	let testColor = UIColor.whiteColor()
+	let testColor = UIColor.white
 
 	func testRegularAccessors() {
 		let alert = OKAlertController(title: "title", message: "message")
-		alert.addAction("Ut enim ad minim veniam", style: .Default, handler: nil)
-		alert.addAction("Duis aute irure dolor", style: .Default, handler: nil)
-		alert.addAction("Cancel", style: .Cancel, handler: nil)
+		alert.addAction("Ut enim ad minim veniam", style: .default, handler: nil)
+		alert.addAction("Duis aute irure dolor", style: .default, handler: nil)
+		alert.addAction("Cancel", style: .cancel, handler: nil)
 
 		XCTAssertTrue(Int(alert.borderWidth) == 0, "Broken 'borderWidth' default value.")
 		alert.borderWidth = 3
@@ -46,9 +46,9 @@ class OKAlertControllerTests: XCTestCase {
 
 	func testFontAccessors() {
 		let alert = OKAlertController(title: "title", message: "message")
-		alert.addAction("Ut enim ad minim veniam", style: .Default, handler: nil)
-		alert.addAction("Duis aute irure dolor", style: .Default, handler: nil)
-		alert.addAction("Cancel", style: .Cancel, handler: nil)
+		alert.addAction("Ut enim ad minim veniam", style: .default, handler: nil)
+		alert.addAction("Duis aute irure dolor", style: .default, handler: nil)
+		alert.addAction("Cancel", style: .cancel, handler: nil)
 
 		XCTAssertNil(alert.titleFont, "Broken 'titleFont' default value.")
 		alert.titleFont = testFont
@@ -78,10 +78,10 @@ class OKAlertControllerTests: XCTestCase {
 
 	func testColorAccessors() {
 		let alert = OKAlertController(title: "title", message: "message")
-		alert.addAction("Ut enim ad minim veniam", style: .Default, handler: nil)
-		alert.addAction("Duis aute irure dolor", style: .Default, handler: nil)
-		alert.addAction("Cancel", style: .Cancel, handler: nil)
-		alert.addAction("Destructive", style: .Destructive, handler: nil)
+		alert.addAction("Ut enim ad minim veniam", style: .default, handler: nil)
+		alert.addAction("Duis aute irure dolor", style: .default, handler: nil)
+		alert.addAction("Cancel", style: .cancel, handler: nil)
+		alert.addAction("Destructive", style: .destructive, handler: nil)
 
 		XCTAssertNil(alert.backgroundColor, "Broken 'backgroundColor' default value.")
 		alert.backgroundColor = testColor

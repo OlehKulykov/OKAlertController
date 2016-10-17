@@ -41,7 +41,7 @@ class OKAlertControllerUITests: XCTestCase {
     }
 
     func testShowHide() {
-		XCUIDevice.sharedDevice().orientation = .Portrait
+		XCUIDevice.shared().orientation = .portrait
 		
 		let app = XCUIApplication()
 

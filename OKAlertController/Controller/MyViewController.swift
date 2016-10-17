@@ -33,25 +33,25 @@ class MyViewController: UIViewController {
 
 		let alert = OKAlertController(title: alertTitle, message: alertMessage)
 
-		alert.addAction("Ut enim ad minim veniam", style: .Default) { _ in
+		alert.addAction("Ut enim ad minim veniam", style: .default) { _ in
 			print("Ut enim ad minim veniam")
 		}
 
-		alert.addAction("Duis aute irure dolor", style: .Default) { _ in
+		alert.addAction("Duis aute irure dolor", style: .default) { _ in
 			print("Duis aute irure dolor")
 		}
 
-		alert.addAction("Cancel", style: .Cancel) { _ in
+		alert.addAction("Cancel", style: .cancel) { _ in
 			print("Cancel")
 		}
-		alert.addAction("Destructive", style: .Destructive, handler: nil)
+		alert.addAction("Destructive", style: .destructive, handler: nil)
 
 		alert.showMinimalistic()
 //		alert.show(fromController: self, animated: true)
 	}
 
 	override func viewDidLoad() {
-		self.view.backgroundColor = UIColor.lightGrayColor()
+		self.view.backgroundColor = UIColor.lightGray
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 	}

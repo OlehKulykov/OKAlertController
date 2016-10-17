@@ -58,7 +58,7 @@ public enum MyFont: String {
 
 	- Returns: Create custom font with a provided size.
 	*/
-	func fontWithSize(size: CGFloat) -> UIFont {
+	func fontWithSize(_ size: CGFloat) -> UIFont {
 		return UIFont(name: self.rawValue, size: size)!
 	}
 }

@@ -29,7 +29,7 @@ class OKFontTests: XCTestCase {
 
     func testAllFontsAvailable() {
 		func testAllFonts() {
-			for fontKey in iterateEnum(MyFont).generate() {
+			for fontKey in iterateEnum(MyFont).makeIterator() {
 				for fontSize in 5...55 {
 					// Should be initialized without any errors and optionals.
 					let _ = fontKey.fontWithSize(CGFloat(fontSize))
