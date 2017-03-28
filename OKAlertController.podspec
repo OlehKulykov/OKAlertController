@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "OKAlertController"
-  s.version          = "2.0.0"
+  s.version          = "2.0.1"
   s.summary          = "Customisable UIAlertController controller"
   s.description      = <<-DESC
 Customisable UIAlertController controller.
@@ -12,6 +12,7 @@ Customisable UIAlertController controller.
   s.author           = { "OlehKulykov" => "info@resident.name" }
   s.source           = { :git => "https://github.com/OlehKulykov/OKAlertController.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.deprecated = true
 
   s.ios.deployment_target = '8.0'
 
